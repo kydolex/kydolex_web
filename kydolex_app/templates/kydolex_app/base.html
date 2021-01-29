@@ -1,0 +1,252 @@
+{% load static %}
+<!--静的-->
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <title>ブログチュートリアル</title>
+</head>
+
+<body> 
+    <!--ヘッダー-->
+    <div class="header">
+        <nav class="navbar navbar-expand-lg navbar-dark back">
+            <div class="container">
+                <a class="center0" href="/"><span><img class="kydolex_header_log" src="{%static 'img/kydolex.full.log.white.png'%}" alt="title_tokyo"></span></a>
+                <a class="center" href="/">Home<br><span class="under">ホーム</span></a>
+                <a class="center" href="{% url 'designlist'%}">Design list<br><span class="under">デザイン一覧</span></a>
+                <a class="center" href="{% url 'blog'%}">Blog<br><span class="under">ブログ</span></a>
+                <a class="center" href="{% url 'service'%}">Service<br><span class="under">事業内容</span</a>
+                <a class="center" href="{% url 'rate'%}">Rate plan<br><span class="under">料金</span></a>
+                <a class="center" href="{% url 'contact'%}">Contact<br><span class="under">依頼・相談</span></a>
+            </div>
+        </nav>
+    </div> 
+
+    <main>
+        <!--Homeタイトル-->
+        <div class="Home_main_ss">
+            <div class="Home_main">
+                <img class="kydolex_title" src="{%static 'img/kydolex_home_title.png'%}" alt="title_tokyo">
+            </div>
+        </div>
+        <!--Gallery-->
+        <div class="Gallery">
+            <div class="Gallery_title">Gallery</div>
+            <div class="Gallery_title_sub">ギャラリー</div>
+            <div class="Gallery_title_text">Kydolexのホームページのギャラリー項目です <br>
+            下記の気になった項目をクリックして下さい</div>
+            <div class="Gallery_main_body">
+                <!--Gallery　for-->
+                <div class="gallery_all">
+                    <div class="gallery_back">
+                        <div class="gallery_img">
+                            <img class=" gallery_img_img" src="{%static 'img/Adobe8.jpeg'%}" alt="">
+                        </div>
+                        <a class="gallery_title" href="{% url 'about'%}">
+                            <div class="gallery_text">About Kydolex</div>
+                            <div class="gallery_text_sub">概要</div>
+                        </a>
+                    </div>
+                    <div class="gallery_back">
+                        <div class="gallery_img">
+                            <img class=" gallery_img_img" src="{%static 'img/blog.jpeg'%}" alt="">
+                        </div>
+                        <a class="gallery_title" href="{% url 'designlist'%}">
+                            <div class="gallery_text">Design list</div>
+                            <div class="gallery_text_sub">デザイン一覧</div>
+                        </a>
+                    </div>
+                    <div class="gallery_back">
+                        <div class="gallery_img">
+                            <img class=" gallery_img_img" src="{%static 'img/Adobe3.jpeg'%}" alt="">
+                        </div>
+                        <a class="gallery_title" href="#Home_service">
+                            <div class="gallery_text">Service</div>
+                            <div class="gallery_text_sub">サービス</div>
+                        </a>
+                    </div>
+                    <div class="gallery_back">
+                        <div class="gallery_img">
+                            <img class=" gallery_img_img" src="{%static 'img/Adobe2.jpeg'%}" alt="">
+                        </div>
+                        <a class="gallery_title" href="{% url 'designlist'%}">
+                            <div class="gallery_text">Design</div>
+                            <div class="gallery_text_sub">デザイン</div>
+                        </a>
+                    </div>
+                    <div class="gallery_back">
+                        <div class="gallery_img">
+                                    <a href="{% url 'none'%}"><img class=" gallery_img_img" src="{%static 'img/Adobe7.jpeg'%}" alt=""></a>
+                        </div>
+                        <a class="gallery_title" href="{% url 'none'%}">
+                            <div class="gallery_text">App development</div>
+                            <div class="gallery_text_sub">アプリ開発</div>
+                        </a>
+                    </div>
+                    <div class="gallery_back">
+                        <div class="gallery_img">
+                                    <a href="{% url 'blog'%}"><img class=" gallery_img_img" src="{%static 'img/road.jpg'%}" alt=""></a>
+                        </div>
+                        <a class="gallery_title" href="{% url 'blog'%}">
+                            <div class="gallery_text">Blog</div>
+                            <div class="gallery_text_sub">ブログ</div>
+                        </a>
+                    </div>
+                    <div class="gallery_back">
+                        <div class="gallery_img">
+                                    <a href="#et_link"><img class=" gallery_img_img" src="{%static 'img/Adobe6.jpeg'%}" alt=""></a>
+                        </div>
+                        <a class="gallery_title" href="#et_link">
+                            <div class="gallery_text">SNS</div>
+                            <div class="gallery_text_sub">メディア</div>
+                        </a>
+                    </div>
+                    <div class="gallery_back">
+                        <div class="gallery_img">
+                                    <a href="/"><img class=" gallery_img_img" src="{%static 'img/BIT.JPG'%}" alt=""></a>
+                        </div>
+                        <a class="gallery_title" href="https://camp-fire.jp/profile/kawaitos">
+                            <div class="gallery_text">Crowdfunding</div>
+                            <div class="gallery_text_sub">クラウドファンディング</div>
+                        </a>
+                    </div>
+                    <div class="gallery_back">
+                        <div class="gallery_img">
+                                    <a href="{% url 'none'%}"><img class=" gallery_img_img" src="{%static 'img/Adobe1.jpeg'%}" alt=""></a>
+                        </div>
+                        <a class="gallery_title" href="{% url 'none'%}">
+                            <div class="gallery_text">Purchase</div>
+                            <div class="gallery_text_sub">購入</div>
+                        </a>
+                    </div>
+                    <div class="gallery_back">
+                        <div class="gallery_img">
+                                    <a href="{% url 'rate'%}"><img class=" gallery_img_img" src="{%static 'img/Adobe9.jpeg'%}" alt=""></a>
+                        </div>
+                        <a class="gallery_title" href="{% url 'rate'%}">
+                            <div class="gallery_text">Rate plan</div>
+                            <div class="gallery_text_sub">料金</div>
+                        </a>
+                    </div>
+                    <div class="gallery_back">
+                        <div class="gallery_img">
+                                    <a href="#contact_all_link"><img class=" gallery_img_img" src="{%static 'img/Adobe5.jpeg'%}" alt=""></a>
+                        </div>
+                        <a class="gallery_title" href="#contact_all_link">
+                            <div class="gallery_text">Consultation</div>
+                            <div class="gallery_text_sub">相談</div>
+                        </a>
+                    </div>
+                    <div class="gallery_back">
+                        <div class="gallery_img">
+                                    <a href="#contact_all_link"><img class=" gallery_img_img" src="{%static 'img/Adobe10.jpeg'%}" alt=""></a>
+                        </div>
+                        <a class="gallery_title" href="#contact_all_link">
+                            <div class="gallery_text">Request</div>
+                            <div class="gallery_text_sub">作成依頼</div>
+                        </a>
+                    </div>
+                </div>
+                <!--Gallery　for end-->
+            </div>
+        </div>
+        <!--About-->
+        <div id="Home_service" class="about">
+            <div class="about_title">Kydolex’s Service</div>
+            <div class="about_title_sub">Kydolexのサービス</div>
+            <div class="Gallery_title_text">Kydolexのサービス一覧です<br>
+                下記のサービスに興味がありましたら詳細/金額ボタンを是非押してください</div>
+            <div class="about_main_body">
+                {% block about %}
+                {% endblock %}
+            </div>
+        </div>
+
+        <!--Link-->
+        <div id="et_link" class="Link">
+            <div class="link_title">External link</div>
+            <div class="Gallery_title_sub">外部リンク</div>
+            <div class="Gallery_title_text">Kydolexが登録している外部サイトです <br>
+            下記のSNSやWebサイトのID、名前が一致しているアカウントだけがKydolexです<br>
+            アイコンをクリックすると外部サイトに飛びます</div>
+            <div class="link_main_body">
+                {% block Link %} 
+                {% endblock %}
+            </div>
+        </div>
+        <!--問合せ-->
+        <div id="contact_all_link" class="contact">
+            <div class="contact_title">Contact</div>
+            <div class="Gallery_title_sub">相談/依頼</div>
+            <div class="Gallery_title_text">Kydolexに作成依頼を行えるフォームです <br>
+            料金価格はあくまでも参考価格ですので相談、作成依頼を送って頂けると幸いです。<br>
+            </div>
+            <div class="contact_main_body">
+                <div class="contact_box">
+                    <div class="contact_title_in">料金</div>
+                    <div class="contact_boxtext">あなたのコンセプトに合わせて
+                        弊社サービスを提供します。
+                        ご気軽にご相談ください。</div>
+                    <div class="contact_boxink"><a class="contact_boxink_b" href="/">料金確認に進む</a></div>
+                </div>
+                <div class="contact_box2">
+                    <div class="contact_title_in">相談</div>
+                    <div class="contact_boxtext">あなたのコンセプトに合わせて
+                        弊社サービスを提供します。
+                        ご気軽にご相談ください。</div>
+                    <div class="contact_boxink"><a class="contact_boxink_b" href="/">相談確認に進む</a></div>
+                </div>
+                <div class="contact_box3">
+                    <div class="contact_title_in">依頼</div>
+                    <div class="contact_boxtext">あなたのコンセプトに合わせて
+                        弊社サービスを提供します。
+                        ご気軽にご相談ください。</div>
+                    <div class="contact_boxink"><a class="contact_boxink_b" href="/">依頼確認に進む</a></div>
+                </div>
+
+            </div>   
+        </div>
+
+
+
+        </div>   
+    </main>
+
+    <footer class="footer_all">
+        <div class="footer">
+            <div class="footer_title">
+                <img class="footer_img" src="{%static 'img/Kydolex.full.log.white.png'%}" alt="">
+                <div class="footer_title_sub">〜 Make your life more exciting 〜</div>
+            </div>
+            <div class="footer_text_body">
+                <div class="footer_text">
+                    <a class="footer_text_text" href="{% url 'about'%}#gaiyo">企業概要</a>
+                    <a class="footer_text_text" href="{% url 'about'%}#kawai">企業代表者</a>
+                    <a class="footer_text_text" href="{% url 'about'%}#rinen">企業理念</a>
+                    <a class="footer_text_text" href="{% url 'service'%}">事業内容</a>
+                    <a class="footer_text_text" href="{% url 'blog'%}">最新情報</a>
+                    <a class="footer_text_text" href="{% url 'designlist'%}">ギャラリー</a>
+                    <a class="footer_text_text" href="{% url 'none'%}">販売サイト</a>
+                    <a class="footer_text_text" href="#et_link">宣伝媒体</a>
+                    <a class="footer_text_text" href="{% url 'rate'%}">作成料金</a>
+                    <a class="footer_text_text" href="{% url 'contact'%}">作成予約</a>
+                    <a class="footer_text_text" href="{% url 'contact'%}">作成相談</a>
+                    <a class="footer_text_text" href="{% url 'contact'%}">作成依頼</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    {% block extra_js %}
+        <script>
+
+        </script>
+    {% endblock %}
+</body>
+
+</html>

@@ -1,0 +1,94 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <title>ブログチュートリアル</title>
+</head>
+
+
+<body> 
+    <!--ヘッダー-->
+    <div class="header">
+        <nav class="navbar navbar-expand-lg navbar-dark back">
+            <div class="container">
+                <a class="center0" href="/"><span><img class="kydolex_header_log" src="{%static 'img/kydolex.full.log.white.png'%}" alt="title_tokyo"></span></a>
+                <a class="center" href="/">Home<br><span class="under">ホーム</span></a>
+                <a class="center" href="{% url 'designlist'%}">Design list<br><span class="under">デザイン一覧</span></a>
+                <a class="center" href="{% url 'blog'%}">Blog<br><span class="under">ブログ</span></a>
+                <a class="center" href="{% url 'service'%}">Service<br><span class="under">事業内容</span</a>
+                <a class="center" href="{% url 'rate'%}">Rate plan<br><span class="under">料金</span></a>
+                <a class="center" href="{% url 'contact'%}">Contact<br><span class="under">依頼・相談</span></a>
+            </div>
+        </nav>
+    </div> 
+
+    <main>
+            <div class="Blog_title">
+                <div class="designlist_title_body">
+                    <div class="Blog_title_title">Kydolex's Design List</div>
+                    <div class="Blog_title_title_sub">Kydolexのデザインリスト</div>
+                    <div class="Blog_title_text">Kydolexがデザインした作品を投稿しています。<br>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="designlist_all">
+                {% block List %}
+                {% for post in post_data %} 
+                <div class="designlist_box" > 
+                    <a class="designlist_img" href="/"> 
+                        {% if post.image %}
+                            <img class="designlist_img_img" src="{{ post.image.url }}" alt="">
+                        {% endif %}
+                    </a>
+                    <div class="designlist_text">
+                        <div class="designlist_title_text">{{ post.title }}</div>
+                        <div class="designlist_name">{{ post.author }}</div>
+                        <div class="designlist_titlesub"> {{ post.created|date }}</div>                   
+                    </div>
+                </div>
+                {% endfor %}
+                {% endblock %}
+            </div>
+            
+            
+
+    </main>
+
+    <footer class="footer_all">
+        <div class="footer">
+            <div class="footer_title">
+                <img class="footer_img" src="{%static 'img/Kydolex.full.log.white.png'%}" alt="">
+                <div class="footer_title_sub">〜 Make your life more exciting 〜</div>
+            </div>
+            <div class="footer_text_body">
+                <div class="footer_text">
+                    <a class="footer_text_text" href="{% url 'about'%}#gaiyo">企業概要</a>
+                    <a class="footer_text_text" href="{% url 'about'%}#kawai">企業代表者</a>
+                    <a class="footer_text_text" href="{% url 'about'%}#rinen">企業理念</a>
+                    <a class="footer_text_text" href="{% url 'service'%}">事業内容</a>
+                    <a class="footer_text_text" href="{% url 'blog'%}">最新情報</a>
+                    <a class="footer_text_text" href="{% url 'designlist'%}">ギャラリー</a>
+                    <a class="footer_text_text" href="{% url 'none'%}">販売サイト</a>
+                    <a class="footer_text_text" href="{% url 'index'%}#et_link">宣伝媒体</a>
+                    <a class="footer_text_text" href="{% url 'rate'%}">作成料金</a>
+                    <a class="footer_text_text" href="{% url 'contact'%}">作成予約</a>
+                    <a class="footer_text_text" href="{% url 'contact'%}">作成相談</a>
+                    <a class="footer_text_text" href="{% url 'contact'%}">作成依頼</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    {% block extra_js %}
+        <script>
+        </script>
+    {% endblock %}
+</body>
+
+</html>
