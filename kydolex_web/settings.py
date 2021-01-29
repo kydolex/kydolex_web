@@ -20,12 +20,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'oq*mg=r0n0lw(k9(5%1=2v(rw-l6+@nlf@j8jh6weu^2@i)&2i'
 
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-
-ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -105,11 +100,12 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/2.2/topics/i18n/
 
-ALLOWED_HOSTS = ['*']
+
 
 LANGUAGE_CODE = 'ja'
 
 TIME_ZONE = 'Asia/Tokyo'
+
 USE_I18N = True
 
 USE_L10N = True
@@ -125,7 +121,34 @@ STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
 
 
-SITE_ID = 1
-LOGIN_REDIRECT_URL = '/'
-ACCOUNT_LOGOUT_REDIRECT_URL = '/'
-ACCOUNT_EMAIL_VERIFICATION = 'none'
+# デプロイ設定
+DEBUG = False
+
+try:
+    from .local_settings import *
+except ImportError:
+    pass
+
+# ローカル用設定
+if DEBUG:
+    ALLOWED_HOSTS = ['*']
+    EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+    MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+if not DEBUG:
+    import environ
+    env = environ.Env()
+    env.read_env(os.path.join(BASE_DIR,'.env'))
+
+    SECRET_KEY = env('SECRET_KEY')
+    ALLOWED_HOSTS = env.list('ALLOWED_HOSTS')
+
+    EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+    EMAIL_HOST = 'smtp.gmail.com'
+    EMAIL_PORT = 587
+    EMAIL_HOST_USER = env('EMAIL_HOST_USER')
+    EMAIL_HOST_PASSWORD = env('EMAIL_HOST_PASSWORD')
+    EMAIL_USE_TLS = True
+
+    STATIC_ROOT = '/usr/share/nginx/html/static'
+    MEDIA_ROOT = '/usr/share/nginx/html/media'
