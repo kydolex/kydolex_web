@@ -13,8 +13,8 @@
             <div class="about_text">
                 <div class="about_title_text">{{ post2.title }}</div>
                 <div class="about_titlesub">{{ post2.sub }}</div>
-                <a class="about_Request" href="/">Request/依頼</a>
-                <a class="about_Request" href="/">Request/依頼</a>
+                <a class="about_Request" href="{% url 'contact'%}">Request/依頼</a>
+                <a class="about_Request" href="{% url 'contact'%}">Consultation/相談</a>
                 <div class="about_text_text">
                     <p class="about_text_text_in">{{ post2.content|truncatechars:150 }}</p>
                 </div>                     
@@ -24,22 +24,4 @@
 {% endblock %}
 
 
-{% block Link %}
-        <div class="link_all">
-        {% for post3 in post_data3 %}
-            <div class="link_body"><a href="{{ post3.title_url }}">
-                <div class="linl_icon">
-                    {% if post3.image %}
-                        <img class=" link_img" src="{{ post3.image.url }}" alt="">
-                    {% endif %}
-                </div>
-                <div class="link_text">
-                    <div class="link_title_text">{{ post3.title }}</div>
-                    <div class="link_name">Name:{{ post3.title_name }}</div>
-                    <div class="link_id">ID:{{ post3.title_id }}</div>                  
-                </div>
-            </a></div>
-        {% endfor %}
-    </div>
-{% endblock %}
 

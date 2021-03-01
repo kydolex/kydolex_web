@@ -8,215 +8,318 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
-    <title>ブログチュートリアル</title>
+    <title>Kydolex</title>
+    <link rel="shortcut icon" href="{%static 'img/Kydolex.png'%}">
 </head>
 
 <body> 
-    <!--ヘッダー-->
+
+
+    <main>
+        <!--ヘッダー-->
     <div class="header">
         <nav class="navbar navbar-expand-lg navbar-dark back">
             <div class="container">
                 <a class="center0" href="/"><span><img class="kydolex_header_log" src="{%static 'img/kydolex.full.log.white.png'%}" alt="title_tokyo"></span></a>
                 <a class="center" href="/">Home<br><span class="under">ホーム</span></a>
-                <a class="center" href="{% url 'designlist'%}">Design list<br><span class="under">デザイン一覧</span></a>
-                <a class="center" href="{% url 'blog'%}">Blog<br><span class="under">ブログ</span></a>
+                <a class="center" href="{% url 'designlist'%}">Library<br><span class="under">作品一覧</span></a>
+                <a class="center" href="/">Kydolex<br><span class="under">Kydolexについて</span></a>
                 <a class="center" href="{% url 'service'%}">Service<br><span class="under">事業内容</span</a>
-                <a class="center" href="{% url 'rate'%}">Rate plan<br><span class="under">料金</span></a>
-                <a class="center" href="{% url 'contact'%}">Contact<br><span class="under">依頼・相談</span></a>
+                <a class="center" href="{% url 'contact'%}">Contact<br><span class="under">お問い合わせ</span></a>
             </div>
         </nav>
     </div> 
-
-    <main>
         <!--Homeタイトル-->
-        <div class="Home_main_ss">
-            <div class="Home_main">
-                <img class="kydolex_title" src="{%static 'img/kydolex_home_title.png'%}" alt="title_tokyo">
-            </div>
+        <div class="slide"> 
+            <img src="{%static 'img/kydolex_home_title.png'%}" alt="">
+            <img src="{%static 'img/sky.jpg'%}" alt="">
+            <img src="{%static 'img/title_6_アートボード 1.png'%}" alt="">
         </div>
-        <!--Gallery-->
-        <div class="Gallery">
-            <div class="Gallery_title">Gallery</div>
-            <div class="Gallery_title_sub">ギャラリー</div>
-            <div class="Gallery_title_text">Kydolexのホームページのギャラリー項目です <br>
-            下記の気になった項目をクリックして下さい</div>
-            <div class="Gallery_main_body">
-                <!--Gallery　for-->
-                <div class="gallery_all">
-                    <div class="gallery_back">
-                        <div class="gallery_img">
-                            <img class=" gallery_img_img" src="{%static 'img/Adobe8.jpeg'%}" alt="">
-                        </div>
-                        <a class="gallery_title" href="{% url 'about'%}">
-                            <div class="gallery_text">About Kydolex</div>
-                            <div class="gallery_text_sub">概要</div>
-                        </a>
-                    </div>
-                    <div class="gallery_back">
-                        <div class="gallery_img">
-                            <img class=" gallery_img_img" src="{%static 'img/blog.jpeg'%}" alt="">
-                        </div>
-                        <a class="gallery_title" href="{% url 'designlist'%}">
-                            <div class="gallery_text">Design list</div>
-                            <div class="gallery_text_sub">デザイン一覧</div>
-                        </a>
-                    </div>
-                    <div class="gallery_back">
-                        <div class="gallery_img">
-                            <img class=" gallery_img_img" src="{%static 'img/Adobe3.jpeg'%}" alt="">
-                        </div>
-                        <a class="gallery_title" href="#Home_service">
-                            <div class="gallery_text">Service</div>
-                            <div class="gallery_text_sub">サービス</div>
-                        </a>
-                    </div>
-                    <div class="gallery_back">
-                        <div class="gallery_img">
-                            <img class=" gallery_img_img" src="{%static 'img/Adobe2.jpeg'%}" alt="">
-                        </div>
-                        <a class="gallery_title" href="{% url 'designlist'%}">
-                            <div class="gallery_text">Design</div>
-                            <div class="gallery_text_sub">デザイン</div>
-                        </a>
-                    </div>
-                    <div class="gallery_back">
-                        <div class="gallery_img">
-                                    <a href="{% url 'none'%}"><img class=" gallery_img_img" src="{%static 'img/Adobe7.jpeg'%}" alt=""></a>
-                        </div>
-                        <a class="gallery_title" href="{% url 'none'%}">
-                            <div class="gallery_text">App development</div>
-                            <div class="gallery_text_sub">アプリ開発</div>
-                        </a>
-                    </div>
-                    <div class="gallery_back">
-                        <div class="gallery_img">
-                                    <a href="{% url 'blog'%}"><img class=" gallery_img_img" src="{%static 'img/road.jpg'%}" alt=""></a>
-                        </div>
-                        <a class="gallery_title" href="{% url 'blog'%}">
-                            <div class="gallery_text">Blog</div>
-                            <div class="gallery_text_sub">ブログ</div>
-                        </a>
-                    </div>
-                    <div class="gallery_back">
-                        <div class="gallery_img">
-                                    <a href="#et_link"><img class=" gallery_img_img" src="{%static 'img/Adobe6.jpeg'%}" alt=""></a>
-                        </div>
-                        <a class="gallery_title" href="#et_link">
-                            <div class="gallery_text">SNS</div>
-                            <div class="gallery_text_sub">メディア</div>
-                        </a>
-                    </div>
-                    <div class="gallery_back">
-                        <div class="gallery_img">
-                                    <a href="/"><img class=" gallery_img_img" src="{%static 'img/BIT.JPG'%}" alt=""></a>
-                        </div>
-                        <a class="gallery_title" href="https://camp-fire.jp/profile/kawaitos">
-                            <div class="gallery_text">Crowdfunding</div>
-                            <div class="gallery_text_sub">クラウドファンディング</div>
-                        </a>
-                    </div>
-                    <div class="gallery_back">
-                        <div class="gallery_img">
-                                    <a href="{% url 'none'%}"><img class=" gallery_img_img" src="{%static 'img/Adobe1.jpeg'%}" alt=""></a>
-                        </div>
-                        <a class="gallery_title" href="{% url 'none'%}">
-                            <div class="gallery_text">Purchase</div>
-                            <div class="gallery_text_sub">購入</div>
-                        </a>
-                    </div>
-                    <div class="gallery_back">
-                        <div class="gallery_img">
-                                    <a href="{% url 'rate'%}"><img class=" gallery_img_img" src="{%static 'img/Adobe9.jpeg'%}" alt=""></a>
-                        </div>
-                        <a class="gallery_title" href="{% url 'rate'%}">
-                            <div class="gallery_text">Rate plan</div>
-                            <div class="gallery_text_sub">料金</div>
-                        </a>
-                    </div>
-                    <div class="gallery_back">
-                        <div class="gallery_img">
-                                    <a href="#contact_all_link"><img class=" gallery_img_img" src="{%static 'img/Adobe5.jpeg'%}" alt=""></a>
-                        </div>
-                        <a class="gallery_title" href="#contact_all_link">
-                            <div class="gallery_text">Consultation</div>
-                            <div class="gallery_text_sub">相談</div>
-                        </a>
-                    </div>
-                    <div class="gallery_back">
-                        <div class="gallery_img">
-                                    <a href="#contact_all_link"><img class=" gallery_img_img" src="{%static 'img/Adobe10.jpeg'%}" alt=""></a>
-                        </div>
-                        <a class="gallery_title" href="#contact_all_link">
-                            <div class="gallery_text">Request</div>
-                            <div class="gallery_text_sub">作成依頼</div>
-                        </a>
-                    </div>
+
+        <!--Menu-->
+        <div class="item_class">
+            <div class="title_class">
+                <h1 class="middle_title">Site map</h1>
+                <h1 class="middle_title_sub">サイトマップ</h1>
+            </div>
+    
+            <a class="site_link_form" href="">
+                <div class="site_link hover_purple_back">
+                    <h3 class="site_link_title">About Kydolex</h3>
+                    <h3 class="site_link_title_sub">会社概要</h3>
+                    <img class="site_link_img" src="{%static 'img/Adobe8.jpeg'%}" alt="">
                 </div>
-                <!--Gallery　for end-->
+            </a>   
+            <a class="site_link_form" href="">
+                <div class="site_link hover_yellow_back">
+                    <h3 class="site_link_title">Activities</h3>
+                    <h3 class="site_link_title_sub">活動内容</h3>
+                    <img class="site_link_img" src="{%static 'img/Adobe7.jpeg'%}" alt="">
+                </div>
+            </a>
+            <a class="site_link_form" href="">
+                <div class="site_link hover_green_back">
+                    <h3 class="site_link_title">Libraly</h3>
+                    <h3 class="site_link_title_sub">作品一覧</h3>
+                    <img class="site_link_img" src="{%static 'img/Adobe17.jpeg'%}" alt="">
+                </div>
+            </a>
+            <a class="site_link_form" href="">
+                <div class="site_link hover_red_back">
+                    <h3 class="site_link_title">Infomation</h3>
+                    <h3 class="site_link_title_sub">お知らせ</h3>
+                    <img class="site_link_img" src="{%static 'img/Adobe20.jpeg'%}" alt="">
+                </div>
+            </a>
+            <a class="site_link_form" href="">
+                <div class="site_link hover_light-green_back">
+                    <h3 class="site_link_title">Service</h3>
+                    <h3 class="site_link_title_sub">事業内容</h3>
+                    <img class="site_link_img" src="{%static 'img/Adobe2.jpeg'%}" alt="">
+                </div>
+            </a>
+            <a class="site_link_form" href="">
+                <div class="site_link hover_orange_back">
+                    <h3 class="site_link_title">External link</h3>
+                    <h3 class="site_link_title_sub">外部リンク</h3>
+                    <img class="site_link_img" src="{%static 'img/Adobe23.jpeg'%}" alt="">
+                </div>
+            </a>
+            <a class="site_link_form" href="">
+                <div class="site_link hover_pink_back">
+                    <h3 class="site_link_title">Performance</h3>
+                    <h3 class="site_link_title_sub">実績</h3>
+                    <img class="site_link_img" src="{%static 'img/Adobe4.jpeg'%}" alt="">
+                </div>
+            </a>
+            <a class="site_link_form" href="">
+                <div class="site_link hover_blue_back">
+                    <h3 class="site_link_title">Contact</h3>
+                    <h3 class="site_link_title_sub">お問い合わせ</h3>
+                    <img class="site_link_img" src="{%static 'img/AC_17.jpg'%}" alt="">
+                </div>
+            </a>
+
+        </div>
+
+        <!--About-->
+        <div class="back_black">
+            <div class="item_class">
+                <div class="title_class">
+                    <h1 class="middle_title text_white">Kydolex</h1>
+                    <h1 class="middle_title_sub text_white">Kydolex概要</h1>
+                </div>
+
+
+                <div class="rectangle_body">
+                    <a href="">
+                        <img class="square_img" src="{%static 'img/kydolex_home_title.png'%}" alt="">
+                        <h3 class="text_basic">Webデザイン・作成の依頼をご依頼いただけます。弊社お問い合わせフォームからデザインイメージ、コーディング内容等をご相談いただけます。料金等については詳細をご覧ください。</h3>
+                    </a>
+                </div>
+
+                <div class="rectangle_body">
+                    <a href="">
+                        <img class="square_img" src="{%static 'img/kydolex_home_title.png'%}" alt="">
+                        <h3 class="text_basic">Webデザイン・作成の依頼をご依頼いただけます。弊社お問い合わせフォームからデザインイメージ、コーディング内容等をご相談いただけます。料金等については詳細をご覧ください。</h3>
+                    </a>
+                </div>
+
+                <div class="rectangle_body">
+                    <a href="">
+                        <img class="square_img" src="{%static 'img/kydolex_home_title.png'%}" alt="">
+                        <h3 class="text_basic">Webデザイン・作成の依頼をご依頼いただけます。弊社お問い合わせフォームからデザインイメージ、コーディング内容等をご相談いただけます。料金等については詳細をご覧ください。</h3>
+                    </a>
+                </div>
             </div>
         </div>
-        <!--About-->
-        <div id="Home_service" class="about">
-            <div class="about_title">Kydolex’s Service</div>
-            <div class="about_title_sub">Kydolexのサービス</div>
-            <div class="Gallery_title_text">Kydolexのサービス一覧です<br>
-                下記のサービスに興味がありましたら詳細/金額ボタンを是非押してください</div>
-            <div class="about_main_body">
-                {% block about %}
-                {% endblock %}
+
+        <!--Libraly-->
+        <div class="item_class">
+            <div class="title_class">
+                <h1 class="middle_title">Libraly</h1>
+                <h1 class="middle_title_sub">作品一覧</h1>
             </div>
+
+            <a class="site_link_form_2" href="">
+                <div class="site_link hover_blue_back">
+                    <h3 class="site_link_title_2">Web Design</h3>
+                    <h3 class="site_link_title_sub_2">ウェブデザイン</h3>
+                    <img class="site_link_img" src="{%static 'img/Adobe22.jpeg'%}" alt="">
+                </div>
+            </a>  
+            <a class="site_link_form_2" href="">
+                <div class="site_link hover_yellow_back">
+                    <h3 class="site_link_title_2">UI/UX</h3>
+                    <h3 class="site_link_title_sub_2">UI/UX</h3>
+                    <img class="site_link_img" src="{%static 'img/AC_16.jpg'%}" alt="">
+                </div>
+            </a> 
+            <a class="site_link_form_2" href="">
+                <div class="site_link hover_orange_back">
+                    <h3 class="site_link_title_2">Icon</h3>
+                    <h3 class="site_link_title_sub_2">アイコン</h3>
+                    <img class="site_link_img" src="{%static 'img/Adobe13.jpeg'%}" alt="">
+                </div>
+            </a> 
+            <a class="site_link_form_2" href="">
+                <div class="site_link hover_black_back">
+                    <h3 class="site_link_title_2">Adobe 3D</h3>
+                    <h3 class="site_link_title_sub_2">アドビ 3D</h3>
+                    <img class="site_link_img" src="{%static 'img/Adobe21.jpeg'%}" alt="">
+                </div>
+            </a> 
+            <a class="site_link_form_2" href="">
+                <div class="site_link hover_light-green_back">
+                    <h3 class="site_link_title_2">Graphic</h3>
+                    <h3 class="site_link_title_sub_2">グラフィック</h3>
+                    <img class="site_link_img" src="{%static 'img/Adobe7.jpeg'%}" alt="">
+                </div>
+            </a> 
+            <a class="site_link_form_2" href="">
+                <div class="site_link hover_green_back">
+                    <h3 class="site_link_title_2">Video</h3>
+                    <h3 class="site_link_title_sub_2">動画</h3>
+                    <img class="site_link_img" src="{%static 'img/Adobe15.jpeg'%}" alt="">
+                </div>
+            </a> 
+            <a class="site_link_form_2" href="">
+                <div class="site_link hover_red_back">
+                    <h3 class="site_link_title_2">Photograph</h3>
+                    <h3 class="site_link_title_sub_2">写真</h3>
+                    <img class="site_link_img" src="{%static 'img/Adobe1.jpeg'%}" alt="">
+                </div>
+            </a> 
+            <a class="site_link_form_2" href="">
+                <div class="site_link hover_purple_back">
+                    <h3 class="site_link_title_2">Image</h3>
+                    <h3 class="site_link_title_sub_2">イメージ画像</h3>
+                    <img class="site_link_img" src="{%static 'img/Adobe16.jpeg'%}" alt="">
+                </div>
+            </a> 
+            <a class="site_link_form_2" href="">
+                <div class="site_link hover_light-blue_back">
+                    <h3 class="site_link_title_2">Blog</h3>
+                    <h3 class="site_link_title_sub_2">ブログ</h3>
+                    <img class="site_link_img" src="{%static 'img/Adobe19.jpeg'%}" alt="">
+                </div>
+            </a> 
+           
+          
+
+        </div>
+
+        <!--Bussiness-->
+        <div class="back_gray">
+            <div class="item_class">
+                <div class="middle_title">Business・Activities</div>
+                <div class="middle_title_sub">事業・活動一覧</div>
+    
+                <div class="width_box_90">
+                    <div class="middle_title_sub text_white">事業・活動一覧</div>
+                    <h3 class="text_basic">
+                        Webデザイン・作成の依頼をご依頼いただけます。弊社お問い合わせフォームからデザインイメージ、コーディング内容等をご相談いただけます。料金等については詳細をご覧ください。
+                    </h3>
+                    <a class="buttom_link simple_hover_red" href="">sssssss</a>
+                    <img class="back_img" src="{%static 'img/SAKURA.jpeg'%}" alt="">
+                </div>
+                
+            </div>
+
         </div>
 
         <!--Link-->
-        <div id="et_link" class="Link">
-            <div class="link_title">External link</div>
-            <div class="Gallery_title_sub">外部リンク</div>
-            <div class="Gallery_title_text">Kydolexが登録している外部サイトです <br>
-            下記のSNSやWebサイトのID、名前が一致しているアカウントだけがKydolexです<br>
-            アイコンをクリックすると外部サイトに飛びます</div>
-            <div class="link_main_body">
-                {% block Link %} 
-                {% endblock %}
+        <div class="item_class">
+            <div class="middle_title">External link</div>
+            <div class="middle_title_sub">外部リンク</div>
+            
+            <a class="whit_hover" href="https://www.instagram.com/kydolex/">
+                <div class="rectangle_body hover_pink_back">
+                    <img class="circle_img" src="{%static 'img/Instagram.png'%}" alt="">
+                    <div class="middle_title_sub">Instagaram</div>
+                    <div class="item_class">
+                        <h3 class="middle_title_sub_nomal">Name:Kydolex</h3>
+                        <h3 class="middle_title_sub_nomal">ID:@kydolex</h3>
+                    </div>
+                </div>
+            </a>
+            <a class="whit_hover" href="https://twitter.com/Kydolex">
+                <div class="rectangle_body hover_light-blue_back">
+                    <img class="circle_img" src="{%static 'img/Twitter social icons - circle - blue.png'%}" alt="">
+                    <div class="middle_title_sub">Twitter</div>
+                    <div class="item_class">
+                        <h3 class="middle_title_sub_nomal">Name:Kydolex</h3>
+                        <h3 class="middle_title_sub_nomal">ID:@kydolex</h3>
+                    </div>
+                </div>
+            </a>
+            <a class="whit_hover" href="https://crowdworks.jp/public/employees/3783526">
+                <div class="rectangle_body hover_blue_back">
+                    <img class="circle_img" src="{%static 'img/CrowdWorks.jpg'%}" alt="">
+                    <div class="middle_title_sub">CrowdWorks</div>
+                    <div class="item_class">
+                        <h3 class="middle_title_sub_nomal">Name:としふゆ</h3>
+                        <h3 class="middle_title_sub_nomal">ID:3783526</h3>
+                    </div>
+                </div>
+            </a>
+            <a class="whit_hover" href="https://www.lancers.jp/profile/kuni00">
+                <div class="rectangle_body hover_light-green_back">
+                    <img class="circle_img" src="{%static 'img/Lancers.png'%}" alt="">
+                    <div class="middle_title_sub">Lancers</div>
+                    <div class="item_class">
+                        <h3 class="middle_title_sub_nomal">Name:としふゆ</h3>
+                        <h3 class="middle_title_sub_nomal">ユーザー名:kuni00</h3>
+                    </div>
+                </div>
+            </a>
+            <a class="whit_hover" href="">
+                <div class="rectangle_body hover_red_back">
+                    <img class="circle_img" src="{%static 'img/youtube_social_square_red.png'%}" alt="">
+                    <div class="middle_title_sub">YouTube</div>
+                    <div class="item_class">
+                        <h3 class="middle_title_sub_nomal">チャンネル名:Kydolex</h3>
+                        <h3 class="middle_title_sub_nomal">ID:@kydolex</h3>
+                    </div>
+                </div>
+            </a>
+            <a class="whit_hover" href="">
+                <div class="rectangle_body hover_black_back">
+                    <img class="circle_img" src="{%static 'img/tiktok-logo.jpg'%}" alt="">
+                    <div class="middle_title_sub">TikTok</div>
+                    <div class="item_class">
+                        <h3 class="middle_title_sub_nomal">Name:Kydolex</h3>
+                        <h3 class="middle_title_sub_nomal">ID:@kydolex</h3>
+                    </div>
+                </div>
+            </a>
+
+            
+        </div>
+
+
+        <!--Contacr-->
+        <div class="back_gray">
+            <div class="item_class">
+                <div class="title_class">
+                    <div class="middle_title ">Contact</div>
+                    <div class="middle_title_sub ">お問い合わせ</div>
+                </div>
+    
+                <a class="contact_link_form" href="">
+                    <div class="site_link hover_purple_back">
+                        <h3 class="site_link_title">Kydolex's mail address</h3>
+                        <h3 class="site_link_title_sub">Kydolex メールアドレス</h3>
+                        <h3 class="contact_text_basic">メールでのお問い合わせフォームです。</h3>
+                        <img class="site_link_img" src="{%static 'img/Adobe11.jpeg'%}" alt="">
+                    </div>
+                </a>
+                
+
             </div>
         </div>
-        <!--問合せ-->
-        <div id="contact_all_link" class="contact">
-            <div class="contact_title">Contact</div>
-            <div class="Gallery_title_sub">相談/依頼</div>
-            <div class="Gallery_title_text">Kydolexに作成依頼を行えるフォームです <br>
-            料金価格はあくまでも参考価格ですので相談、作成依頼を送って頂けると幸いです。<br>
-            </div>
-            <div class="contact_main_body">
-                <div class="contact_box">
-                    <div class="contact_title_in">料金</div>
-                    <div class="contact_boxtext">あなたのコンセプトに合わせて
-                        弊社サービスを提供します。
-                        ご気軽にご相談ください。</div>
-                    <div class="contact_boxink"><a class="contact_boxink_b" href="/">料金確認に進む</a></div>
-                </div>
-                <div class="contact_box2">
-                    <div class="contact_title_in">相談</div>
-                    <div class="contact_boxtext">あなたのコンセプトに合わせて
-                        弊社サービスを提供します。
-                        ご気軽にご相談ください。</div>
-                    <div class="contact_boxink"><a class="contact_boxink_b" href="/">相談確認に進む</a></div>
-                </div>
-                <div class="contact_box3">
-                    <div class="contact_title_in">依頼</div>
-                    <div class="contact_boxtext">あなたのコンセプトに合わせて
-                        弊社サービスを提供します。
-                        ご気軽にご相談ください。</div>
-                    <div class="contact_boxink"><a class="contact_boxink_b" href="/">依頼確認に進む</a></div>
-                </div>
 
-            </div>   
-        </div>
-
-
-
-        </div>   
-    </main>
-
+          <!--Footer-->
     <footer class="footer_all">
         <div class="footer">
             <div class="footer_title">
@@ -241,11 +344,13 @@
             </div>
         </div>
     </footer>
+    </main>
+
 
     {% block extra_js %}
-        <script>
-
-        </script>
+    <script>
+  
+    </script>
     {% endblock %}
 </body>
 

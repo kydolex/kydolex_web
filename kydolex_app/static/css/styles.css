@@ -22,7 +22,7 @@ main {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 3;
+  z-index: 6;
   width: 100%;
 }
 .kydolex_header_log {
@@ -52,399 +52,331 @@ main {
 }
 
 /*Homeタイトルー*/
-.Home_main {
-  width: 100%;
-  text-align: center;
-  z-index: 1;
-}
-
-.kydolex_title {
+.slide {
   position: relative;
   width: 100%;
-  height: 750px;
-  object-fit: cover;
+  height: 620px;
+  overflow: hidden;
+}
+.slide img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: auto;
+  opacity: 0;
+  animation :slideshow 24s linear infinite;
+}
+@keyframes slideshow {
+  0%{
+    opacity: 0;
+  }
+  10%{
+    opacity: 1;
+  }
+  28%{
+    opacity: 1
+  }
+  38%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 0;
+  }
+  }
+  .slide img:nth-child(2){
+    animation-delay: 8s;
+  }
+   
+  .slide img:last-child{
+    animation-delay: 16s;
+  }
+
+/*item_program*/
+.item_class{
+  position: relative;
+  display: inline-block;
   text-align: center;
-  opacity: 1;
-  z-index: 1;
+  width: 90%;
+  margin: 5% 0%;
+}
+.title_class{
+  position: relative;
+  display: inline-block;
+  text-align: center;
+  width: 100%;
+  margin: 3% 0% 0% 0%;;
+}
+.back_black{
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  margin: 2% 0%;
+  background-color: rgb(39, 39, 39);
+}
+.back_gray{
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  margin: 2% 0%;
+  background-color: rgb(245, 245, 245);
 }
 
-/*about*/
-.about {
-  text-align: center;
+/*text_css*/
+.middle_title{
   position: relative;
-  background-color: #f8f8f8;
-  margin: 3% 0%;
-  padding: 0% 0% 5% 0%;
-  height: 100%;
-}
-.about_title {
-  position: relative;
+  display: inline-block;
+  width: 100%;
   font: normal normal bold 45px/100% Hiragino Mincho ProN;
-  height: 100%;
-  padding: 5% 0% 1% 0%;
-  z-index: 2;
+  z-index: 3;
 }
-.about_title_sub {
+.middle_title_sub{
   position: relative;
+  display: inline-block;
+  width: 100%;
   font: normal normal bold 20px/100% Hiragino Mincho ProN;
-  height: 100%;
+  padding: 1% 0px;
+  z-index: 3;
 }
-.about_main_body {
-  width: 80%;
-  position: relative;
-  margin: 2% 10% 0% 10%;
-}
-.about_box {
-  display: inline-block;
-  position: relative;
-  margin-bottom: 3%;
-}
-.about_img {
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  z-index: 1;
-}
-.about_img_img {
-  position: relative;
-  text-align: center;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-top: solid 10px #000000;
-  border-bottom: solid 10px #000000;
-  z-index: 1;
-}
-.about_img::after {
+.middle_title_sub_nomal{
   position: relative;
   display: inline-block;
-  content: "";
-  background: linear-gradient(-135deg, #000000ad, #000000ad);
   width: 100%;
-  top: -100%;
-  height: 100%;
-  z-index: 1;
+  font: normal normal normal 17px/100% Hiragino Mincho ProN;
+  padding: 1% 0px;
+  z-index: 3;
 }
-
-.about_text {
+.text_basic{
   position: relative;
-}
-
-.about_title_text {
-  position: relative;
-  font: normal normal bold 25px/50px Hiragino Mincho ProN;
-  text-align: left;
-  padding: 3% 5% 0% 5%;
-  color: #ffffff;
-  z-index: 2;
-}
-.about_titlesub {
-  position: relative;
-  font: normal normal bold 15px/15px Hiragino Mincho ProN;
-  text-align: left;
-  color: #ffffff;
-  padding: 0% 5%;
-  z-index: 2;
-}
-.about_text_text {
   display: inline-block;
-  color: #ffffff;
-  text-align: left;
-  width: 60%;
-  height: 100px;
-  padding: 0% 5% 0% 10%;
-  font: normal normal normal 15px/25px Hiragino Mincho ProN;
+  width: 100%;
+  padding: 1% 10%;
+  line-height: 1.5em;
+  color: white;
+  font: normal normal normal 15px/150% Hiragino Mincho ProN;
+  z-index: 3;
+}
+.text_white{
   position: relative;
-  z-index: 2;
-}
-.about_text_text_in {
-  display: block;
-  font: normal normal normal 15px/25px Hiragino Mincho ProN;
-  z-index: 2;
-}
-.about_Request {
-  position: relative;
-  font: normal normal bold 13px/20px Hiragino Mincho ProN;
-  padding: 1% 2%;
-  color: #ffffff;
-  border: solid 1px #ffffff;
-  width: 15%;
-  text-align: center;
-  float: left;
-  left: 4%;
-  margin: 3% 1%;
-  z-index: 2;
-  transition: 1s;
-}
-.about_Request:hover {
-  background-color: #5900fd80;
+  display: inline-block;
   color: #ffffff;
 }
 
-/*Gallery*/
-.Gallery {
-  text-align: center;
+/*buttom_css*/
+.buttom_link{
   position: relative;
-  margin: 100px 0px;
-}
-.Gallery_title {
-  position: relative;
-  font: normal normal bold 45px/130px Hiragino Mincho ProN;
-  height: 100px;
-}
-.Gallery_title_sub {
-  position: relative;
-  font: normal normal bold 20px/100% Hiragino Mincho ProN;
-  height: 100%;
-}
-.Gallery_title_text {
-  position: relative;
-  font: normal normal bold 15px/180% Hiragino Mincho ProN;
-  height: 100%;
-  padding-top: 2%;
-  color: #585858;
-}
-.Gallery_main_body {
-  position: relative;
-  text-align: center;
-  width: 80%;
+  display: inline-block;
+  width: 200px;
+  color: #ffffff;
+  margin: 20px 0px;
   padding: 10px 0px;
-  display: inline-block;
+  border: solid 0.5px #ffffff;
+  z-index: 3;
 }
-.gallery_back {
+.site_link_form{
   position: relative;
-  width: 320px;
-  height: 130px;
-  margin: 15px;
   display: inline-block;
+  height: 200px;
+  width: 230px;
+  margin:1% 1% ;
+}
+.site_link{
+  position: relative;
+  display: inline-block;
+  height: 100%;
+  width: 100%;
   border-top: solid 10px #000000;
   border-bottom: solid 10px #000000;
+  z-index: 1;
 }
-
-.gallery_img {
+.site_link_title{
   position: absolute;
-  height: 100%;
-  object-fit: cover;
-  z-index: 1;
-  width: 320px;
-}
-
-.gallery_img:after {
-  position: relative;
-  display: inline-block;
-  content: "";
-  background-color: #00000075;
-  width: 100%;
-  top: -100%;
-  height: 100%;
-  z-index: 1;
-}
-.gallery_img_img {
-  position: relative;
-  display: inline-block;
-  height: 100%;
-  object-fit: cover;
-  z-index: 1;
-  width: 320px;
-}
-.gallery_title {
-  position: relative;
-  display: inline-block;
-  width: 100%;
-  height: 100%;
-  z-index: 2;
-  transition: 1s;
-}
-.gallery_title:hover {
-  background-color: rgba(255, 0, 106, 0.712);
-}
-.gallery_text {
-  position: relative;
-  display: inline-block;
-  width: 100%;
   font: normal normal bold 25px/100% Hiragino Mincho ProN;
   color: #ffffff;
-  padding: 10% 0% 0% 0%;
-  z-index: 2;
-}
-.gallery_text_sub {
-  position: relative;
-  display: inline-block;
   width: 100%;
+  padding: 70px 0px 0px 0px;
+  z-index: 3;
+}
+.site_link_title_sub{
+  position: absolute;
   font: normal normal bold 18px/100% Hiragino Mincho ProN;
   color: #ffffff;
-  padding: 2% 0%;
-  z-index: 2;
-}
-
-/*<!--Link-->*/
-.Link {
-  text-align: center;
-  padding: 3% 0%;
-  background-color: #ffffff;
-}
-.link_title {
-  position: relative;
-  font: normal normal bold 45px/100% Hiragino Mincho ProN;
-  padding-bottom: 1%;
-}
-.link_main_body {
-  display: inline-block;
-  position: relative;
-  width: 90%;
-  padding-top: 2%;
-}
-.link_body {
-  position: relative;
-  display: inline-block;
-  width: 20%;
-  padding: 3%;
-  height: 100%;
-  transition: 1s;
-}
-.link_body:hover {
-  background-color: rgba(32, 0, 107, 0.349);
-}
-.linl_icon {
-  position: relative;
+  padding: 110px 0px 0px 0px;
   width: 100%;
-  z-index: 2;
+  z-index: 3;
 }
-.link_img {
-  position: relative;
-  border-radius: 50%;
-  width: 40%;
-}
-
-.link_text {
+.site_link_img{
   position: relative;
   display: inline-block;
+  object-fit: cover;
+  height: 100%;
   width: 100%;
   z-index: 1;
 }
-.link_title_text {
-  position: relative;
-  font: normal normal bold 25px/20px Hiragino Mincho ProN;
-  color: #000000;
-  width: 100%;
-  padding: 8%;
+.site_link::after{
+  position:absolute;/*固定配置*/
+  top: 0; 
+  left: 0;/*左上に固定*/
+  width: 100%; height: 100%;/*画面全体を覆う*/
+  content: "";
+  background-color: #4141417e;
+  z-index: 2;
 }
-.link_name {
+.site_link_form_2{
   position: relative;
-  width: 100%;
-  font: normal normal bold 15px/20px Hiragino Mincho ProN;
-  color: #585858;
-}
-.link_id {
-  position: relative;
-  width: 100%;
-  font: normal normal bold 15px/20px Hiragino Mincho ProN;
-  color: #585858;
-}
-.link_text_text {
-  width: 90%;
   display: inline-block;
+  height: 150px;
+  width: 330px;
+  margin:1% 1% ;
 }
-.link_content {
-  position: relative;
-  text-align: center;
-  display: inline-block;
+.site_link_title_2{
+  position: absolute;
+  font: normal normal bold 25px/100% Hiragino Mincho ProN;
+  color: #ffffff;
   width: 100%;
-  font: normal normal bold 15px/20px Hiragino Mincho ProN;
-  color: #585858;
-  padding: 3% 0%;
+  padding: 40px 0px 0px 0px;
+  z-index: 3;
+}
+.site_link_title_sub_2{
+  position: absolute;
+  font: normal normal bold 18px/100% Hiragino Mincho ProN;
+  color: #ffffff;
+  padding: 85px 0px 0px 0px;
+  width: 100%;
+  z-index: 3;
+}
+.contact_link_form{
+  position: relative;
+  display: inline-block;
+  height: 250px;
+  width: 430px;
+  margin:1% 1% ;
+}
+.contact_text_basic{
+  position: absolute;
+  display: inline-block;
+  font: normal normal normal 13px/100% Hiragino Mincho ProN;
+  color: #ffffff;
+  padding: 160px 0px 0px 0px;
+  width: 100%;
+  z-index: 3;
 }
 
-/*<!--contact-->*/
-.contact {
-  text-align: center;
-  margin: 7% 0%;
-  padding: 3% 0%;
-  background-color: #f8f8f8;
-}
-.contact_title {
-  position: relative;
-  font: normal normal bold 45px/100% Hiragino Mincho ProN;
-  padding: 0% 0% 1% 0%;
-}
-.contact_main_body {
-  position: relative;
-  text-align: center;
-  display: inline-block;
-  width: 90%;
-  height: 450px;
-}
-.contact_box {
-  display: inline-block;
-  text-align: center;
-  width: 25%;
-  height: 100%;
-  background: linear-gradient(-135deg, #0000007e, #0000007e),
-    url(../img/Adobe9.jpeg);
-  background-size: cover;
-  border-bottom: solid 13px #000000;
-  border-top: solid 13px #000000;
-  margin: 2% 3% 5% 3%;
-  color: #ffffff;
-}
-.contact_box2 {
-  display: inline-block;
-  text-align: center;
-  width: 25%;
-  height: 100%;
-  background: linear-gradient(-135deg, #0000007e, #0000007e),
-    url(../img/Adobe5.jpeg);
-  background-size: cover;
-  border-bottom: solid 13px #000000;
-  border-top: solid 13px #000000;
-  margin: 0% 3% 5% 3%;
-  color: #ffffff;
-}
-.contact_box3 {
-  display: inline-block;
-  text-align: center;
-  width: 25%;
-  height: 100%;
-  background: linear-gradient(-135deg, #0000007e, #0000007e),
-    url(../img/Adobe10.jpeg);
-  background-size: cover;
-  border-bottom: solid 13px #000000;
-  border-top: solid 13px #000000;
-  margin: 0% 3% 5% 3%;
-  color: #ffffff;
-}
-.contact_title_in {
-  position: relative;
-  font: normal normal bold 30px/70px Hiragino Mincho ProN;
-  padding: 8% 3% 0% 3%;
-}
-.contact_boxtext {
-  height: 200px;
-  padding: 10%;
-  font: normal normal normal 18px/30px Hiragino Mincho ProN;
-}
-.contact_boxink {
-  position: relative;
-  text-align: center;
-  display: inline-block;
-  width: 100%;
-  color: #ffffff;
-}
-.contact_boxink_b {
-  position: relative;
-  text-align: center;
-  display: inline-block;
-  width: 50%;
-  color: #ffffff;
-  border: solid 1px #ffffff;
-  font: normal normal normal 15px/40px Hiragino Mincho ProN;
-  padding: 4% 0%;
+/*hover*/
+.hover_red_back:hover::after{
+  background-color: #b10202ce;
   transition: 0.5s;
 }
-.contact_boxink_b:hover {
-  background-color: rgba(0, 255, 234, 0.623);
+.hover_yellow_back:hover::after{
+  background-color: #767e00d3;
+  transition: 0.5s;
+}
+.hover_blue_back:hover::after{
+  background-color: #020074b6;
+  transition: 0.5s;
   color: #ffffff;
 }
+.hover_green_back:hover::after{
+  background-color: #144b19cc;
+  transition: 0.5s;
+}
+.hover_pink_back:hover::after{
+  background-color: #a5007ccb;
+  transition: 0.5s;
+}
+.hover_purple_back:hover::after{
+  background-color: #56007ec5;
+  transition: 0.5s;
+}
+.hover_light-blue_back:hover::after{
+  background-color: #007e94d3;
+  transition: 0.5s;
+}
+.hover_light-green_back:hover::after{
+  background-color: #00814bd3;
+  transition: 0.5s;
+}
+.hover_orange_back:hover::after{
+  background-color: #a85100d0;
+  transition: 0.5s;
+}
+.hover_black_back:hover::after{
+  background-color: #000000d0;
+  transition: 0.5s;
+}
+.simple_hover_red:hover{
+  color: #ffffff;
+  background-color: #3633ffc7;
+}
+.whit_hover{
+  color: #000000;
+}
+.whit_hover:hover{
+  color: #ffffff;
+  z-index: 3;
+}
+/*body*/
+.rectangle_body{
+  position: relative;
+  display: inline-block;
+  width: 250px;
+  padding: 2% 2%;
+  margin: 1% 1%;
+  z-index: 1;
+}
+.rectangle_body::after{
+  position:absolute;/*固定配置*/
+  top: 0; 
+  left: 0;/*左上に固定*/
+  width: 100%; height: 100%;/*画面全体を覆う*/
+  content: "";
+}
+.width_box_90{
+  position: relative;
+  display: inline-block;
+  width: 80%;
+  padding: 2% 0% 0% 0%;
+  margin: 3% 0%;
+  border-top: solid 10px #000000;
+  border-bottom: solid 10px #000000;
+}
+.width_box_90::after{
+  position:absolute;/*固定配置*/
+  top: 0; 
+  left: 0;/*左上に固定*/
+  width: 100%; height: 100%;/*画面全体を覆う*/
+  content: "";
+  background-color: #000000bb;
+}
+/*image*/
+.square_img{
+  position: relative;
+  display: inline-block;
+  width: 200px;
+  height: 200px;
+  margin: 0% 0% 7% 0%; 
+  object-fit: cover;
+}
+.circle_img {
+  position: relative;
+  display: inline-block;
+  border-radius: 100%;
+  height: 55%;
+  width: 55%;
+  margin: 60px 0px;
+  z-index: 3;
+}
+.back_img{
+  position: absolute;
+  left:0;
+  top: 0;
+  width: 100%;
+  height:100%;
+  object-fit: cover;
+}
+
+
 
 /*<!--footer-->*/
 .footer_all {
