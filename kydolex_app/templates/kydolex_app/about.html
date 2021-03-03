@@ -1,4 +1,5 @@
 {% load static %}
+<!--静的-->
 <!DOCTYPE html>
 <html lang="ja">
 
@@ -7,21 +8,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
-    <title>ブログチュートリアル</title>
+    <title>Kydolex</title>
+    <link rel="shortcut icon" href="{%static 'img/Kydolex.png'%}">
 </head>
 
 <body> 
-    <!--ヘッダー-->
+
+
+    <main>
+        <!--ヘッダー-->
     <div class="header">
         <nav class="navbar navbar-expand-lg navbar-dark back">
             <div class="container">
                 <a class="center0" href="/"><span><img class="kydolex_header_log" src="{%static 'img/kydolex.full.log.white.png'%}" alt="title_tokyo"></span></a>
                 <a class="center" href="/">Home<br><span class="under">ホーム</span></a>
-                <a class="center" href="{% url 'designlist'%}">Design list<br><span class="under">デザイン一覧</span></a>
-                <a class="center" href="{% url 'blog'%}">Blog<br><span class="under">ブログ</span></a>
+                <a class="center" href="{% url 'designlist'%}">Library<br><span class="under">作品一覧</span></a>
+                <a class="center" href="{% url 'about'%}">Kydolex<br><span class="under">Kydolexについて</span></a>
                 <a class="center" href="{% url 'service'%}">Service<br><span class="under">事業内容</span</a>
-                <a class="center" href="{% url 'rate'%}">Rate plan<br><span class="under">料金</span></a>
-                <a class="center" href="{% url 'contact'%}">Contact<br><span class="under">依頼・相談</span></a>
+                <a class="center" href="{% url 'contact'%}">Contact<br><span class="under">お問い合わせ</span></a>
             </div>
         </nav>
     </div> 
@@ -42,7 +46,7 @@
                 <div class="about_kydolex_about_body">
                     <div class="about_kydolex_about_title">概要</div>
                     <div class="about_kydolex_about_text">KydolexはWeb関係の受託、サービス提供を行う組織です。<br>
-                        川合利明の個人事業として2021年1月に開業しました。<br>
+                        川合利明の個人事業として2021年3月に開業しました。<br>
                         Kydolexは『Make your life more exciting 』を理念として、お客様の人生をより刺激的にするようなサービスの提供をいたします。<br> </div>
                 </div>
             </div>
@@ -84,20 +88,18 @@
             </div>
             <div class="footer_text_body">
                 <div class="footer_text">
-                    <div class="footer_text">
-                        <a class="footer_text_text" href="{% url 'about'%}#gaiyo">企業概要</a>
-                        <a class="footer_text_text" href="{% url 'about'%}#kawai">企業代表者</a>
-                        <a class="footer_text_text" href="{% url 'about'%}#rinen">企業理念</a>
-                        <a class="footer_text_text" href="{% url 'service'%}">事業内容</a>
-                        <a class="footer_text_text" href="{% url 'blog'%}">最新情報</a>
-                        <a class="footer_text_text" href="{% url 'designlist'%}">ギャラリー</a>
-                        <a class="footer_text_text" href="{% url 'none'%}">販売サイト</a>
-                        <a class="footer_text_text" href="{% url 'index'%}#et_link">宣伝媒体</a>
-                        <a class="footer_text_text" href="{% url 'rate'%}">作成料金</a>
-                        <a class="footer_text_text" href="{% url 'contact'%}">作成予約</a>
-                        <a class="footer_text_text" href="{% url 'contact'%}">作成相談</a>
-                        <a class="footer_text_text" href="{% url 'contact'%}">作成依頼</a>
-                    </div>
+                    <a class="footer_text_text" href="{% url 'about'%}#gaiyo">企業概要</a>
+                    <a class="footer_text_text" href="{% url 'about'%}#kawai">企業代表者</a>
+                    <a class="footer_text_text" href="{% url 'about'%}#rinen">企業目標</a>
+                    <a class="footer_text_text" href="{% url 'service'%}">事業内容</a>
+                    <a class="footer_text_text" href="{% url 'blog'%}">最新情報</a>
+                    <a class="footer_text_text" href="{% url 'designlist'%}">作品一覧</a>
+                    <a class="footer_text_text" href="{% url 'none'%}">販売サイト</a>
+                    <a class="footer_text_text" href="#et_link">SNS</a>
+                    <a class="footer_text_text" href="https://www.lancers.jp/profile/kuni00">業務委託</a>
+                    <a class="footer_text_text" href="{% url 'contact'%}">お問い合わせ</a>
+                    <a class="footer_text_text" href="{% url 'contact'%}">作成相談</a>
+                    <a class="footer_text_text" href="{% url 'contact'%}">作成依頼</a>
                 </div>
             </div>
         </div>

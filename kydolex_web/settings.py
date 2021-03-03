@@ -34,6 +34,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'widget_tweaks',
     'kydolex_app',
+    
 ]
 
 MIDDLEWARE = [
@@ -116,10 +117,10 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
-
+ALLOWED_HOSTS = ['*']
 STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
-
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # デプロイ設定
 DEBUG = False
@@ -139,7 +140,6 @@ else:
     import environ
     env = environ.Env()
     env.read_env(os.path.join(BASE_DIR,'.env'))
-
     SECRET_KEY = env('SECRET_KEY')
     ALLOWED_HOSTS = env.list('ALLOWED_HOSTS')
 

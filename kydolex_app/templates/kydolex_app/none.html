@@ -1,4 +1,5 @@
 {% load static %}
+<!--静的-->
 <!DOCTYPE html>
 <html lang="ja">
 
@@ -7,27 +8,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
-    <title>ブログチュートリアル</title>
+    <title>Kydolex</title>
+    <link rel="shortcut icon" href="{%static 'img/Kydolex.png'%}">
 </head>
 
 <body> 
-    <!--ヘッダー-->
+
+
+    <main>
+        <!--ヘッダー-->
     <div class="header">
         <nav class="navbar navbar-expand-lg navbar-dark back">
             <div class="container">
                 <a class="center0" href="/"><span><img class="kydolex_header_log" src="{%static 'img/kydolex.full.log.white.png'%}" alt="title_tokyo"></span></a>
                 <a class="center" href="/">Home<br><span class="under">ホーム</span></a>
-                <a class="center" href="{% url 'designlist'%}">Design list<br><span class="under">デザイン一覧</span></a>
-                <a class="center" href="{% url 'blog'%}">Blog<br><span class="under">ブログ</span></a>
+                <a class="center" href="{% url 'designlist'%}">Library<br><span class="under">作品一覧</span></a>
+                <a class="center" href="{% url 'about'%}">Kydolex<br><span class="under">Kydolexについて</span></a>
                 <a class="center" href="{% url 'service'%}">Service<br><span class="under">事業内容</span</a>
-                <a class="center" href="{% url 'rate'%}">Rate plan<br><span class="under">料金</span></a>
-                <a class="center" href="{% url 'contact'%}">Contact<br><span class="under">依頼・相談</span></a>
+                <a class="center" href="{% url 'contact'%}">Contact<br><span class="under">お問い合わせ</span></a>
             </div>
         </nav>
     </div> 
 
     <main>            
         <div class="None_text">Coming Soon...</div>
+
+         
+        {% block List %}
+        {% for post in design_data %} 
+        <a class="list_box" href="{{ post.content_url }}">
+            {% if post.image %}
+                <img class="list_img"　src="{{ post.image.url }}" alt="">
+            {% endif %}
+            <div class="list_box_title">{{ post.title }}</div>
+            <div class="list_box_text">{{ post.content }}</div>
+        </a>
+        {% endfor %}
+        {% endblock %}
     </main>
 
     <footer class="footer_all">
@@ -40,14 +57,14 @@
                 <div class="footer_text">
                     <a class="footer_text_text" href="{% url 'about'%}#gaiyo">企業概要</a>
                     <a class="footer_text_text" href="{% url 'about'%}#kawai">企業代表者</a>
-                    <a class="footer_text_text" href="{% url 'about'%}#rinen">企業理念</a>
+                    <a class="footer_text_text" href="{% url 'about'%}#rinen">企業目標</a>
                     <a class="footer_text_text" href="{% url 'service'%}">事業内容</a>
                     <a class="footer_text_text" href="{% url 'blog'%}">最新情報</a>
-                    <a class="footer_text_text" href="{% url 'designlist'%}">ギャラリー</a>
+                    <a class="footer_text_text" href="{% url 'designlist'%}">作品一覧</a>
                     <a class="footer_text_text" href="{% url 'none'%}">販売サイト</a>
-                    <a class="footer_text_text" href="{% url 'index'%}#et_link">宣伝媒体</a>
-                    <a class="footer_text_text" href="{% url 'rate'%}">作成料金</a>
-                    <a class="footer_text_text" href="{% url 'contact'%}">作成予約</a>
+                    <a class="footer_text_text" href="#et_link">SNS</a>
+                    <a class="footer_text_text" href="https://www.lancers.jp/profile/kuni00">業務委託</a>
+                    <a class="footer_text_text" href="{% url 'contact'%}">お問い合わせ</a>
                     <a class="footer_text_text" href="{% url 'contact'%}">作成相談</a>
                     <a class="footer_text_text" href="{% url 'contact'%}">作成依頼</a>
                 </div>

@@ -1,4 +1,5 @@
 {% load static %}
+<!--静的-->
 <!DOCTYPE html>
 <html lang="ja">
 
@@ -7,54 +8,310 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
-    <title>ブログチュートリアル</title>
+    <title>Kydolex</title>
+    <link rel="shortcut icon" href="{%static 'img/Kydolex.png'%}">
 </head>
 
-
 <body> 
-    <!--ヘッダー-->
+
+
+    <main>
+        <!--ヘッダー-->
     <div class="header">
         <nav class="navbar navbar-expand-lg navbar-dark back">
             <div class="container">
                 <a class="center0" href="/"><span><img class="kydolex_header_log" src="{%static 'img/kydolex.full.log.white.png'%}" alt="title_tokyo"></span></a>
                 <a class="center" href="/">Home<br><span class="under">ホーム</span></a>
-                <a class="center" href="{% url 'designlist'%}">Design list<br><span class="under">デザイン一覧</span></a>
-                <a class="center" href="{% url 'blog'%}">Blog<br><span class="under">ブログ</span></a>
+                <a class="center" href="{% url 'designlist'%}">Library<br><span class="under">作品一覧</span></a>
+                <a class="center" href="{% url 'about'%}">Kydolex<br><span class="under">Kydolexについて</span></a>
                 <a class="center" href="{% url 'service'%}">Service<br><span class="under">事業内容</span</a>
-                <a class="center" href="{% url 'rate'%}">Rate plan<br><span class="under">料金</span></a>
-                <a class="center" href="{% url 'contact'%}">Contact<br><span class="under">依頼・相談</span></a>
+                <a class="center" href="{% url 'contact'%}">Contact<br><span class="under">お問い合わせ</span></a>
             </div>
         </nav>
     </div> 
 
     <main>
-            <div class="Blog_title">
-                <div class="designlist_title_body">
-                    <div class="Blog_title_title">Kydolex's Design List</div>
-                    <div class="Blog_title_title_sub">Kydolexのデザインリスト</div>
-                    <div class="Blog_title_text">Kydolexがデザインした作品を投稿しています。<br>
-                    </div>
+            <div class="sub_page_title">
+                <img class="back_img" src="{%static 'img/Adobe2_low.jpeg'%}" alt="">
+                <div class="title_class">
+                    <div class="middle_title text_white">Kydolex's Design List</div>
+                    <div class="middle_title_sub text_white">Kydolexのデザインリスト</div>
+                    <div class="middle_title_sub_nomal text_white">Kydolexがデザインした作品を投稿しています。<br></div>
                 </div>
             </div>
             
-            <div class="designlist_all">
-                {% block List %}
-                {% for post in post_data %} 
-                <div class="designlist_box" > 
-                    <a class="designlist_img" href="/"> 
-                        {% if post.image %}
-                            <img class="designlist_img_img" src="{{ post.image.url }}" alt="">
-                        {% endif %}
-                    </a>
-                    <div class="designlist_text">
-                        <div class="designlist_title_text">{{ post.title }}</div>
-                        <div class="designlist_name">{{ post.author }}</div>
-                        <div class="designlist_titlesub"> {{ post.created|date }}</div>                   
+            <div class="item_class"　id="switch">
+    
+                <a class="site_link_form_2 tab tab-A is-active">
+                    <div class="site_link hover_blue_back">
+                        <h3 class="site_link_title_2">Web Design</h3>
+                        <h3 class="site_link_title_sub_2">ウェブデザイン</h3>
+                        <img class="site_link_img" src="{%static 'img/Adobe22.jpeg'%}" alt="">
                     </div>
-                </div>
-                {% endfor %}
-                {% endblock %}
+                </a>  
+                <a class="site_link_form_2 tab tab-B">
+                    <div class="site_link hover_yellow_back">
+                        <h3 class="site_link_title_2">UI/UX</h3>
+                        <h3 class="site_link_title_sub_2">UI/UX</h3>
+                        <img class="site_link_img" src="{%static 'img/AC_16.jpg'%}" alt="">
+                    </div>
+                </a> 
+                <a class="site_link_form_2 tab tab-C">
+                    <div class="site_link hover_orange_back">
+                        <h3 class="site_link_title_2">Icon</h3>
+                        <h3 class="site_link_title_sub_2">アイコン</h3>
+                        <img class="site_link_img" src="{%static 'img/Adobe13.jpeg'%}" alt="">
+                    </div>
+                </a> 
+                <a class="site_link_form_2 tab tab-D">
+                    <div class="site_link hover_black_back">
+                        <h3 class="site_link_title_2">Adobe 3D</h3>
+                        <h3 class="site_link_title_sub_2">アドビ 3D</h3>
+                        <img class="site_link_img" src="{%static 'img/Adobe21.jpeg'%}" alt="">
+                    </div>
+                </a> 
+                <a class="site_link_form_2 tab tab-E">
+                    <div class="site_link hover_light-green_back">
+                        <h3 class="site_link_title_2">Graphic</h3>
+                        <h3 class="site_link_title_sub_2">グラフィック</h3>
+                        <img class="site_link_img" src="{%static 'img/Adobe7.jpeg'%}" alt="">
+                    </div>
+                </a> 
+                <a class="site_link_form_2 tab tab-F">
+                    <div class="site_link hover_green_back">
+                        <h3 class="site_link_title_2">Video</h3>
+                        <h3 class="site_link_title_sub_2">動画</h3>
+                        <img class="site_link_img" src="{%static 'img/Adobe15.jpeg'%}" alt="">
+                    </div>
+                </a> 
+                <a class="site_link_form_2 tab tab-G">
+                    <div class="site_link hover_red_back">
+                        <h3 class="site_link_title_2">Photograph</h3>
+                        <h3 class="site_link_title_sub_2">写真</h3>
+                        <img class="site_link_img" src="{%static 'img/Adobe1.jpeg'%}" alt="">
+                    </div>
+                </a> 
+                <a class="site_link_form_2 tab tab-H">
+                    <div class="site_link hover_purple_back">
+                        <h3 class="site_link_title_2">Image</h3>
+                        <h3 class="site_link_title_sub_2">イメージ画像</h3>
+                        <img class="site_link_img" src="{%static 'img/Adobe16.jpeg'%}" alt="">
+                    </div>
+                </a> 
+                <a class="site_link_form_2 tab tab-I">
+                    <div class="site_link hover_light-blue_back">
+                        <h3 class="site_link_title_2">Blog</h3>
+                        <h3 class="site_link_title_sub_2">ブログ</h3>
+                        <img class="site_link_img" src="{%static 'img/Adobe19.jpeg'%}" alt="">
+                    </div>
+                </a> 
             </div>
+
+            <div class="panel-group">
+                <div class="panel tab-A is-show back_black">
+                    <div class="title_class">
+                        <div class="middle_title text_white">Web Design</div>
+                        <div class="middle_title_sub text_white">Webデザイン一覧</div>
+                        <div class="middle_title_sub_nomal text_white">クリックすると作成したWebデザインを見ることができます。<br>
+                            作成依頼の参考にしてください。</div>
+                    </div>
+ 
+                        {% block List %}
+                        {% for post in design_data %} 
+                        <a class="list_box" href="{{ post.content_url }}">
+                            {% if post.image %}
+                                <img class="list_img" src="{{ post.image.url }}" alt="">
+                            {% endif %}
+                            <div class="list_box_tex_box">
+                                <div class="list_box_title">{{ post.title }}</div>
+                                <div class="list_box_text">{{ post.content }}</div>
+                            </div>
+                        </a>
+                        {% endfor %}
+                        {% endblock %}
+
+                </div>
+                <div class="panel tab-B">
+                    <div class="title_class">
+                        <div class="middle_title ">UI/UX</div>
+                        <div class="middle_title_sub ">ユーザーインターフェース・ユーザーエクスペリエンス</div>
+                        <div class="middle_title_sub_nomal ">クリックすると作成したWebデザインを見ることができます。<br>
+                            作成依頼の参考にしてください。</div>
+                    </div>
+                        {% block ux %}
+                        {% for post in uxui_data %} 
+                        <div class="list_box">
+                            {% if post.image %}
+                                <a class="list_img" href="{{ post.image.url }}" data-lightbox="group"><img class="list_img" src="{{ post.image.url }}">
+                                </a>
+                            {% endif %}
+                            <div class="list_box_tex_box">
+                                <div class="list_box_title">{{ post.title }}</div>
+                                <div class="list_box_text">{{ post.content }}</div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                        {% endblock %}
+                </div>
+                <div class="panel tab-C back_black">
+                    <div class="title_class">
+                        <div class="middle_title text_white">Icon</div>
+                        <div class="middle_title_sub text_white">アイコン</div>
+                        <div class="middle_title_sub_nomal text_white">クリックすると作成したWebデザインを見ることができます。<br>
+                            作成依頼の参考にしてください。</div>
+                    </div>
+ 
+                        {% block icon %}
+                        {% for post in icon_data %} 
+                        <div class="list_box">
+                            {% if post.image %}
+                                <a class="list_img" href="{{ post.image.url }}" data-lightbox="group"><img class="list_img" src="{{ post.image.url }}">
+                                </a>
+                            {% endif %}
+                            <div class="list_box_tex_box">
+                                <div class="list_box_title">{{ post.title }}</div>
+                                <div class="list_box_text">{{ post.content }}</div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                        {% endblock %}
+                </div>
+                <div class="panel tab-D">
+                    <div class="title_class">
+                        <div class="middle_title ">Adobe 3D</div>
+                        <div class="middle_title_sub ">アドビ3Dイメージ</div>
+                        <div class="middle_title_sub_nomal ">クリックすると作成したWebデザインを見ることができます。<br>
+                            作成依頼の参考にしてください。</div>
+                    </div>
+                        {% block 3D %}
+                        {% for post in threeD_data %} 
+                        <div class="list_box">
+                            {% if post.image %}
+                                <a class="list_img" href="{{ post.image.url }}" data-lightbox="group"><img class="list_img" src="{{ post.image.url }}">
+                                </a>
+                            {% endif %}
+                            <div class="list_box_tex_box">
+                                <div class="list_box_title">{{ post.title }}</div>
+                                <div class="list_box_text">{{ post.content }}</div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                        {% endblock %}
+                </div>
+                <div class="panel tab-E back_black">
+                    <div class="title_class">
+                        <div class="middle_title text_white">Graphic</div>
+                        <div class="middle_title_sub text_white">グラフィックデザイン</div>
+                        <div class="middle_title_sub_nomal text_white">クリックすると作成したWebデザインを見ることができます。<br>
+                            作成依頼の参考にしてください。</div>
+                    </div>
+ 
+                        {% block Graphic %}
+                        {% for post in graphic_data %} 
+                        <div class="list_box">
+                            {% if post.image %}
+                                <a class="list_img" href="{{ post.image.url }}" data-lightbox="group"><img class="list_img" src="{{ post.image.url }}">
+                                </a>
+                            {% endif %}
+                            <div class="list_box_tex_box">
+                                <div class="list_box_title">{{ post.title }}</div>
+                                <div class="list_box_text">{{ post.content }}</div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                        {% endblock %}
+                </div>
+                <div class="panel tab-F">
+                    <div class="title_class">
+                        <div class="middle_title ">Video</div>
+                        <div class="middle_title_sub ">動画一覧</div>
+                        <div class="middle_title_sub_nomal ">クリックすると作成したWebデザインを見ることができます。<br>
+                            作成依頼の参考にしてください。</div>
+                    </div>
+                        {% block video %}
+                        {% for post in video_data %} 
+                        <a class="list_box" href="{{ post.content_url }}">
+                            {% if post.image %}
+                                <img class="list_img" src="{{ post.image.url }}" alt="">
+                            {% endif %}
+                            <div class="list_box_tex_box">
+                                <div class="list_box_title">{{ post.title }}</div>
+                                <div class="list_box_text">{{ post.content }}</div>
+                            </div>
+                        </a>
+                        {% endfor %}
+                        {% endblock %}
+                </div>
+                <div class="panel tab-G back_black">
+                    <div class="title_class">
+                        <div class="middle_title text_white">Photograth</div>
+                        <div class="middle_title_sub text_white">写真一覧</div>
+                        <div class="middle_title_sub_nomal text_white">クリックすると作成したWebデザインを見ることができます。<br>
+                            作成依頼の参考にしてください。</div>
+                    </div>
+ 
+                        {% block photograth %}
+                        {% for post in photograth_data %} 
+                        <div class="list_box">
+                            {% if post.image %}
+                                <a class="list_img" href="{{ post.image.url }}" data-lightbox="group"><img class="list_img" src="{{ post.image.url }}">
+                                </a>
+                            {% endif %}
+                            <div class="list_box_tex_box">
+                                <div class="list_box_title">{{ post.title }}</div>
+                                <div class="list_box_text">{{ post.content }}</div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                        {% endblock %}
+                </div>
+                <div class="panel tab-H">
+                    <div class="title_class">
+                        <div class="middle_title ">Image</div>
+                        <div class="middle_title_sub ">イメージ画像作成</div>
+                        <div class="middle_title_sub_nomal ">クリックすると作成したWebデザインを見ることができます。<br>
+                            作成依頼の参考にしてください。</div>
+                    </div>
+                        {% block image %}
+                        {% for post in image_data %} 
+                        <div class="list_box">
+                            {% if post.image %}
+                                <a class="list_img" href="{{ post.image.url }}" data-lightbox="group"><img class="list_img" src="{{ post.image.url }}">
+                                </a>
+                            {% endif %}
+                            <div class="list_box_tex_box">
+                                <div class="list_box_title">{{ post.title }}</div>
+                                <div class="list_box_text">{{ post.content }}</div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                        {% endblock %}
+                </div>
+                <div class="panel tab-I back_black">
+                    <div class="title_class">
+                        <div class="middle_title text_white">Blog</div>
+                        <div class="middle_title_sub text_white">ブログ</div>
+                        <div class="middle_title_sub_nomal text_white">クリックすると作成したWebデザインを見ることができます。<br>
+                            作成依頼の参考にしてください。</div>
+                    </div>
+ 
+                        {% block blog %}
+                        {% for post in blog_data %} 
+                        <a class="list_box" href="{{ post.content_url }}">
+                            {% if post.image %}
+                                <img class="list_img" src="{{ post.image.url }}" alt="">
+                            {% endif %}
+                            <div class="list_box_tex_box">
+                                <div class="list_box_title">{{ post.title }}</div>
+                                <div class="list_box_text">{{ post.content }}</div>
+                            </div>
+                        </a>
+                        {% endfor %}
+                        {% endblock %}
+                </div>
+                
+            </div>
+
             
             
 
@@ -70,14 +327,14 @@
                 <div class="footer_text">
                     <a class="footer_text_text" href="{% url 'about'%}#gaiyo">企業概要</a>
                     <a class="footer_text_text" href="{% url 'about'%}#kawai">企業代表者</a>
-                    <a class="footer_text_text" href="{% url 'about'%}#rinen">企業理念</a>
+                    <a class="footer_text_text" href="{% url 'about'%}#rinen">企業目標</a>
                     <a class="footer_text_text" href="{% url 'service'%}">事業内容</a>
                     <a class="footer_text_text" href="{% url 'blog'%}">最新情報</a>
-                    <a class="footer_text_text" href="{% url 'designlist'%}">ギャラリー</a>
+                    <a class="footer_text_text" href="{% url 'designlist'%}">作品一覧</a>
                     <a class="footer_text_text" href="{% url 'none'%}">販売サイト</a>
-                    <a class="footer_text_text" href="{% url 'index'%}#et_link">宣伝媒体</a>
-                    <a class="footer_text_text" href="{% url 'rate'%}">作成料金</a>
-                    <a class="footer_text_text" href="{% url 'contact'%}">作成予約</a>
+                    <a class="footer_text_text" href="#et_link">SNS</a>
+                    <a class="footer_text_text" href="https://www.lancers.jp/profile/kuni00">業務委託</a>
+                    <a class="footer_text_text" href="{% url 'contact'%}">お問い合わせ</a>
                     <a class="footer_text_text" href="{% url 'contact'%}">作成相談</a>
                     <a class="footer_text_text" href="{% url 'contact'%}">作成依頼</a>
                 </div>
@@ -86,7 +343,26 @@
     </footer>
 
     {% block extra_js %}
-        <script>
+        <script type="text/javascript">
+                document.addEventListener('DOMContentLoaded', function(){
+                // タブに対してクリックイベントを適用
+                const tabs = document.getElementsByClassName('tab');
+                for(let i = 0; i < tabs.length; i++) {
+                    tabs[i].addEventListener('click', tabSwitch);
+                }
+                // タブをクリックすると実行する関数
+                function tabSwitch(){
+                    // タブのclassの値を変更
+                    document.getElementsByClassName('is-active')[0].classList.remove('is-active');
+                    this.classList.add('is-active');
+                    // コンテンツのclassの値を変更
+                    document.getElementsByClassName('is-show')[0].classList.remove('is-show');
+                    const arrayTabs = Array.prototype.slice.call(tabs);
+                    const index = arrayTabs.indexOf(this);
+                    document.getElementsByClassName('panel')[index].classList.add('is-show');
+                };
+                });
+
         </script>
     {% endblock %}
 </body>

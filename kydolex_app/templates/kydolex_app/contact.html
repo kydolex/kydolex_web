@@ -1,4 +1,5 @@
 {% load static %}
+<!--静的-->
 <!DOCTYPE html>
 <html lang="ja">
 
@@ -7,45 +8,51 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
-    <title>ブログチュートリアル</title>
+    <title>Kydolex</title>
+    <link rel="shortcut icon" href="{%static 'img/Kydolex.png'%}">
 </head>
 
 <body> 
-    <!--ヘッダー-->
+
+
+    <main>
+        <!--ヘッダー-->
     <div class="header">
         <nav class="navbar navbar-expand-lg navbar-dark back">
             <div class="container">
                 <a class="center0" href="/"><span><img class="kydolex_header_log" src="{%static 'img/kydolex.full.log.white.png'%}" alt="title_tokyo"></span></a>
                 <a class="center" href="/">Home<br><span class="under">ホーム</span></a>
-                <a class="center" href="{% url 'designlist'%}">Design list<br><span class="under">デザイン一覧</span></a>
-                <a class="center" href="{% url 'blog'%}">Blog<br><span class="under">ブログ</span></a>
+                <a class="center" href="{% url 'designlist'%}">Library<br><span class="under">作品一覧</span></a>
+                <a class="center" href="{% url 'about'%}">Kydolex<br><span class="under">Kydolexについて</span></a>
                 <a class="center" href="{% url 'service'%}">Service<br><span class="under">事業内容</span</a>
-                <a class="center" href="{% url 'rate'%}">Rate plan<br><span class="under">料金</span></a>
-                <a class="center" href="{% url 'contact'%}">Contact<br><span class="under">依頼・相談</span></a>
+                <a class="center" href="{% url 'contact'%}">Contact<br><span class="under">お問い合わせ</span></a>
             </div>
         </nav>
     </div> 
 
     <main>
-        <div class="Blog_title">
-            <div class="Content_title_body ">
-                <div class="Blog_title_title">Contakt for Kydolex</div>
-                <div class="Blog_title_title_sub">Kydolexへの連絡</div>
-                <div class="Blog_title_text">Kydolexにご依頼・ご相談されたい方用のフォームです<br>
-                依頼・相談でしたら遠慮なくご連絡ください</div>
+        <div class="sub_page_title">
+            <img class="back_img" src="{%static 'img/Adobe2_low.jpeg'%}" alt="">
+            <div class="title_class">
+                <div class="middle_title text_white">Request Consultation for Kydolex</div>
+                <div class="middle_title_sub text_white">Kydolexへの相談・お問い合わせ</div>
+                <div class="middle_title_sub_nomal text_white">Kydolexにご依頼・ご相談されたい方用のフォームです<br>
+                    依頼・相談でしたら遠慮なくご連絡ください</div>
             </div>
         </div>
-            
 
-            <div class="Content_form">
-                <p class="Content_form_text">依頼・相談フォーム</p>
-                <p class="Content_form_text_in">下の画像をクリックしてください<br>
-                　　メールの送信フォームが出てきますので用件を記入後ご連絡ください</p>
-                <div class="Content_form_body">
-                    <a class="Content_form_img_body" href="mailto:kydolex&#64;gmail.com"><img class="Content_form_img" src="{%static 'img/unnamed.png'%}" alt=""></a>
-                    <a class="Content_form_mailadd" href="mailto:kydolex&#64;gmail.com">kydolex&#64;gmail.com</a>
+        
+        <div class="item_class">
+            <a class="contact_link_form" href="mailto:kydolex&#64;gmail.com">
+                <div class="site_link hover_light-blue_back">
+                    <h3 class="site_link_title">Kydolex's mail address</h3>
+                    <h3 class="site_link_title_sub">Kydolex メールアドレス</h3>
+                    <h3 class="contact_text_basic">クリックしたらメールのお問い合わせができます。</h3>
+                    <img class="site_link_img" src="{%static 'img/Adobe10.jpeg'%}" alt="">
                 </div>
-            </div>
+            </a>
+
+        </div>
 
     </main>
 
@@ -59,14 +66,14 @@
                 <div class="footer_text">
                     <a class="footer_text_text" href="{% url 'about'%}#gaiyo">企業概要</a>
                     <a class="footer_text_text" href="{% url 'about'%}#kawai">企業代表者</a>
-                    <a class="footer_text_text" href="{% url 'about'%}#rinen">企業理念</a>
+                    <a class="footer_text_text" href="{% url 'about'%}#rinen">企業目標</a>
                     <a class="footer_text_text" href="{% url 'service'%}">事業内容</a>
                     <a class="footer_text_text" href="{% url 'blog'%}">最新情報</a>
-                    <a class="footer_text_text" href="{% url 'designlist'%}">ギャラリー</a>
+                    <a class="footer_text_text" href="{% url 'designlist'%}">作品一覧</a>
                     <a class="footer_text_text" href="{% url 'none'%}">販売サイト</a>
-                    <a class="footer_text_text" href="{% url 'index'%}#et_link">宣伝媒体</a>
-                    <a class="footer_text_text" href="{% url 'rate'%}">作成料金</a>
-                    <a class="footer_text_text" href="{% url 'contact'%}">作成予約</a>
+                    <a class="footer_text_text" href="#et_link">SNS</a>
+                    <a class="footer_text_text" href="https://www.lancers.jp/profile/kuni00">業務委託</a>
+                    <a class="footer_text_text" href="{% url 'contact'%}">お問い合わせ</a>
                     <a class="footer_text_text" href="{% url 'contact'%}">作成相談</a>
                     <a class="footer_text_text" href="{% url 'contact'%}">作成依頼</a>
                 </div>

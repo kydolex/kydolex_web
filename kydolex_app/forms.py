@@ -41,3 +41,63 @@ class Kydolex_PostForm4(forms.Form):
 class Kydolex_PostForm5(forms.Form):
     title = forms.CharField(max_length=30, label='タイトル')
     image = forms.ImageField(label='イメージ画像', required=False)
+
+class Kydolex_list_WebDesign_Form(forms.Form):
+    title = forms.CharField(max_length=30, label='タイトル')
+    image = forms.ImageField(label='イメージ画像', required=False)
+    content = forms.CharField(label='説明', widget=forms.Textarea())
+    content_url = forms.CharField(label='URL', widget=forms.Textarea())
+
+class Kydolex_list_UIUX_Form(forms.Form):
+    title = forms.CharField(max_length=30, label='タイトル')
+    image = forms.ImageField(label='イメージ画像', required=False)
+    content = forms.CharField(label='説明', widget=forms.Textarea())
+    content_url = forms.CharField(label='URL', widget=forms.Textarea())
+
+class Kydolex_list_Icon(forms.Form):
+    title = forms.CharField(max_length=30, label='タイトル')
+    image = forms.ImageField(label='イメージ画像', required=False)
+    content = forms.CharField(label='説明', widget=forms.Textarea())
+    content_url = forms.CharField(label='URL', widget=forms.Textarea())
+
+class Kydolex_list_3D(forms.Form):
+    title = forms.CharField(max_length=30, label='タイトル')
+    image = forms.ImageField(label='イメージ画像', required=False)
+    content = forms.CharField(label='説明', widget=forms.Textarea())
+    content_url = forms.CharField(label='URL', widget=forms.Textarea())
+
+
+class Kydolex_list_graphic(forms.Form):
+    title = forms.CharField(max_length=30, label='タイトル')
+    image = forms.ImageField(label='イメージ画像', required=False)
+    content = forms.CharField(label='説明', widget=forms.Textarea())
+    content_url = forms.CharField(label='URL', widget=forms.Textarea())
+
+
+class Kydolex_list_video(forms.Form):
+    title = forms.CharField(max_length=30, label='タイトル')
+    image = forms.ImageField(label='イメージ画像', required=False)
+    content = forms.CharField(label='説明', widget=forms.Textarea())
+    content_url = forms.CharField(label='URL', widget=forms.Textarea())
+
+
+class Kydolex_list_Photograth(forms.Form):
+    title = forms.CharField(max_length=30, label='タイトル')
+    image = forms.ImageField(label='イメージ画像', required=False)
+    content = forms.CharField(label='説明', widget=forms.Textarea())
+    content_url = forms.CharField(label='URL', widget=forms.Textarea())
+
+
+class Kydolex_list_Image(forms.Form):
+    title = forms.CharField(max_length=30, label='タイトル')
+    image = forms.ImageField(label='イメージ画像', required=False)
+    content = forms.CharField(label='説明', widget=forms.Textarea())
+    content_url = forms.CharField(label='URL', widget=forms.Textarea())
+
+
+class Kydolex_list_Blog(forms.Form):
+    title = forms.CharField(max_length=30, label='タイトル')
+    image = forms.ImageField(label='イメージ画像', required=False)
+    content = forms.CharField(label='説明', widget=forms.Textarea())
+    content_url = forms.CharField(label='URL', widget=forms.Textarea())
+

@@ -1,4 +1,5 @@
 {% load static %}
+<!--静的-->
 <!DOCTYPE html>
 <html lang="ja">
 
@@ -7,99 +8,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
-    <title>ブログチュートリアル</title>
+    <title>Kydolex</title>
+    <link rel="shortcut icon" href="{%static 'img/Kydolex.png'%}">
 </head>
 
 <body> 
-    <!--ヘッダー-->
+
+
+    <main>
+        <!--ヘッダー-->
     <div class="header">
         <nav class="navbar navbar-expand-lg navbar-dark back">
             <div class="container">
                 <a class="center0" href="/"><span><img class="kydolex_header_log" src="{%static 'img/kydolex.full.log.white.png'%}" alt="title_tokyo"></span></a>
                 <a class="center" href="/">Home<br><span class="under">ホーム</span></a>
-                <a class="center" href="{% url 'designlist'%}">Design list<br><span class="under">デザイン一覧</span></a>
-                <a class="center" href="{% url 'blog'%}">Blog<br><span class="under">ブログ</span></a>
+                <a class="center" href="{% url 'designlist'%}">Library<br><span class="under">作品一覧</span></a>
+                <a class="center" href="{% url 'about'%}">Kydolex<br><span class="under">Kydolexについて</span></a>
                 <a class="center" href="{% url 'service'%}">Service<br><span class="under">事業内容</span</a>
-                <a class="center" href="{% url 'rate'%}">Rate plan<br><span class="under">料金</span></a>
-                <a class="center" href="{% url 'contact'%}">Contact<br><span class="under">依頼・相談</span></a>
+                <a class="center" href="{% url 'contact'%}">Contact<br><span class="under">お問い合わせ</span></a>
             </div>
         </nav>
     </div> 
 
     <main>
-            <div class="Content_title_main_box">
-                <div class="service_title_body">
-                    <div class="Content_title_title">Business content</div>
-                    <div class="Content_title_title_sub">事業内容</div>
-                    <div class="Content_title_text">Kydolexの事業内容です<br>
+        <div class="sub_page_title">
+            <img class="back_img" src="{%static 'img/Adobe2_low.jpeg'%}" alt="">
+            <div class="title_class">
+                <div class="middle_title text_white">Business Content / Active</div>
+                <div class="middle_title_sub text_white">Kydolexの事業内容・活動</div>
+                <div class="middle_title_sub_nomal text_white">Kydolexの事業内容です<br>
                     KydolexはWeb関連の事業を行っています</div>
-                </div>
             </div>
+
+
             
-            <div class="Content_all">
-                {% block Content %}
-                {% for post in post_data　%} 
-                <div class="Content_box"> 
-                    <div class="Content_title">
-                        <div class="Content_title_img">
-                            {% if post.image %}
-                                <img class="Content_title_img_in" src="{{ post.image.url }}" alt="">
-                            {% endif %}
-                        </div>
-                        <div class="Content_title_box">
-                            <div class="Content_title_main">{{ post.title }}</div>
-                            <div class="Content_title_sub">{{ post.sub }}</div>
-                        </div>
-                    </div>
-
-                    <div class="Content_middle">
-                        <div class="Content_middle_title">{{ post.sub_midle }}</div>
-                        <div class="Content_middle_box">
-                            <div class="Content_middle_text">{{ post.sub_content }}</div>  
-                            <div class="Content_middle_img">
-                                {% if post.sub_image %}
-                                <img class="Content_middle_img_in" src="{{ post.sub_image.url }}" alt="">
-                                {% endif %}                   
-                            </div>
-                        </div>
-                    </div>
-                    
-                    {% if post.sub_midle2 %}
-                    <div class="Content_middle">
-                        <div class="Content_middle_title">{{ post.sub_midle2 }}</div>
-                        {% if post.sub_content2 %}
-                        <div class="Content_middle_box">
-                            <div class="Content_middle_text">{{ post.sub_content2 }}</div>   
-                            <div class="Content_middle_img">
-                                {% if post.sub_image2 %}
-                                <img class="Content_middle_img_in" src="{{ post.sub_image2.url }}" alt="">
-                                {% endif %}                   
-                            </div>
-                        </div>
-                        {% endif %}  
-                    </div>
-                    {% endif %} 
-
-                    {% if post.sub_midle3 %}
-                    <div class="Content_middle">
-                        <div class="Content_middle_title">{{ post.sub_midle3 }}</div>
-                        {% if post.sub_content3 %}
-                        <div class="Content_middle_box">
-                            <div class="Content_middle_text">{{ post.sub_content3 }}</div>  
-                            <div class="Content_middle_img">
-                                {% if post.sub_image3 %}
-                                <img class="Content_middle_img_in" src="{{ post.sub_image3.url }}" alt="">
-                                {% endif %}                   
-                            </div>
-                        </div>
-                        {% endif %}  
-                    </div>
-                    {% endif %} 
-
-                </div>
-                {% endfor %}
-                {% endblock %}
-            </div>
             
             
 
@@ -115,14 +57,14 @@
                 <div class="footer_text">
                     <a class="footer_text_text" href="{% url 'about'%}#gaiyo">企業概要</a>
                     <a class="footer_text_text" href="{% url 'about'%}#kawai">企業代表者</a>
-                    <a class="footer_text_text" href="{% url 'about'%}#rinen">企業理念</a>
+                    <a class="footer_text_text" href="{% url 'about'%}#rinen">企業目標</a>
                     <a class="footer_text_text" href="{% url 'service'%}">事業内容</a>
                     <a class="footer_text_text" href="{% url 'blog'%}">最新情報</a>
-                    <a class="footer_text_text" href="{% url 'designlist'%}">ギャラリー</a>
+                    <a class="footer_text_text" href="{% url 'designlist'%}">作品一覧</a>
                     <a class="footer_text_text" href="{% url 'none'%}">販売サイト</a>
-                    <a class="footer_text_text" href="{% url 'index'%}#et_link">宣伝媒体</a>
-                    <a class="footer_text_text" href="{% url 'rate'%}">作成料金</a>
-                    <a class="footer_text_text" href="{% url 'contact'%}">作成予約</a>
+                    <a class="footer_text_text" href="#et_link">SNS</a>
+                    <a class="footer_text_text" href="https://www.lancers.jp/profile/kuni00">業務委託</a>
+                    <a class="footer_text_text" href="{% url 'contact'%}">お問い合わせ</a>
                     <a class="footer_text_text" href="{% url 'contact'%}">作成相談</a>
                     <a class="footer_text_text" href="{% url 'contact'%}">作成依頼</a>
                 </div>
