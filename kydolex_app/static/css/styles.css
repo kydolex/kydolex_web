@@ -50,6 +50,9 @@ main {
   position: relative;
   color: #ffffff;
 }
+.header2{
+  display: none;
+}
 @media(max-width: 900px) {
   .slide {
     position: relative;
@@ -57,6 +60,7 @@ main {
     height: 420px;
     overflow: hidden;
   }
+  
     }
 @media(max-width: 600px) {
   .center {
@@ -74,7 +78,9 @@ main {
   }
   }
 @media (max-width: 480px) {
-
+  .header{
+    display: none;
+  }
     }
 
 /*Homeタイトルー*/
@@ -268,7 +274,7 @@ main {
     width: 100%;
     padding: 4% 10%;
     color: white;
-    font: normal normal normal 3px/190% Hiragino Mincho ProN;
+    font: normal normal normal 12px/190% Hiragino Mincho ProN;
     z-index: 3;
   }
   .text_basic_bold{
@@ -278,7 +284,7 @@ main {
     padding: 4% 10%;
     line-height: 2.0em;
     color: white;
-    font: normal normal bold 3px/250% Hiragino Mincho ProN;
+    font: normal normal bold 12px/250% Hiragino Mincho ProN;
     z-index: 3;
   }
   .middle_title_sub_nomal {
@@ -286,7 +292,7 @@ main {
     display: inline-block;
     width: 100%;
     line-height: 1.5em;
-    font: normal normal normal 1px/100% Hiragino Mincho ProN;
+    font: normal normal normal 12px/100% Hiragino Mincho ProN;
     padding: 1% 0px;
     z-index: 3;
 }
@@ -401,7 +407,7 @@ main {
   }
   .site_link_title {
     position: absolute;
-    font: normal normal bold 12px/100% Hiragino Mincho ProN;
+    font: normal normal bold 14px/100% Hiragino Mincho ProN;
     color: #ffffff;
     width: 100%;
     padding: 22px 0px 0px 0px;
@@ -409,7 +415,7 @@ main {
   }
 .site_link_title_sub {
   position: absolute;
-  font: normal normal normal 1px/100% Hiragino Mincho ProN;
+  font: normal normal normal 12px/100% Hiragino Mincho ProN;
   color: #ffffff;
   padding: 40px 0px 0px 0px;
   width: 100%;
@@ -457,7 +463,7 @@ main {
   .contact_text_basic {
     position: absolute;
     display: inline-block;
-    font: normal normal normal 1px/100% Hiragino Mincho ProN;
+    font: normal normal normal 12px/100% Hiragino Mincho ProN;
     color: #ffffff;
     width: 100%;
     padding: 60px 5% 0% 5%;

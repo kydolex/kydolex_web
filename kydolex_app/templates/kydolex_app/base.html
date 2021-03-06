@@ -30,6 +30,18 @@
                 </div>
             </nav>
         </div> 
+        <div class="header2">
+            <nav class="navbar navbar-expand-lg navbar-dark back">
+                <div class="container">
+                    <a class="center0" href="/"><span><img class="kydolex_header_log" src="{%static 'img/kydolex_white.png'%}" alt=""></span></a>
+                    <a class="center" href="/">Home<br><span class="under">ホーム</span></a>
+                    <a class="center" href="{% url 'designlist'%}">Library<br><span class="under">作品一覧</span></a>
+                    <a class="center" href="{% url 'about'%}">Kydolex<br><span class="under">Kydolexについて</span></a>
+                    <a class="center" href="{% url 'service'%}">Service<br><span class="under">事業内容</span</a>
+                    <a class="center" href="{% url 'contact'%}">Contact<br><span class="under">お問い合わせ</span></a>
+                </div>
+            </nav>
+        </div> 
         <!--Homeタイトル-->
         <div class="slide"> 
             <img src="{%static 'img/kydolex_home_title.png'%}" alt="">
@@ -46,7 +58,7 @@
     
             <a class="site_link_form" href="{% url 'about'%}">
                 <div class="site_link hover_purple_back">
-                    <h3 class="site_link_title">About Kydolex</h3>
+                    <h3 class="site_link_title">Kydolex</h3>
                     <h3 class="site_link_title_sub">会社概要</h3>
                     <img class="site_link_img" src="{%static 'img/Adobe8.jpeg'%}" alt="">
                 </div>
