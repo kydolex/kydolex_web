@@ -18,17 +18,33 @@
     <main>
         <!--ヘッダー-->
         <div class="header">
-            <nav class="navbar navbar-expand-lg navbar-dark back">
-                <div class="container">
-                    <a class="center0" href="/"><span><img class="kydolex_header_log" src="{%static 'img/kydolex_white.png'%}" alt=""></span></a>
-                    <a class="center" href="/">Home<br><span class="under">ホーム</span></a>
-                    <a class="center" href="{% url 'designlist'%}">Library<br><span class="under">作品一覧</span></a>
-                    <a class="center" href="{% url 'about'%}">Kydolex<br><span class="under">Kydolexについて</span></a>
-                    <a class="center" href="{% url 'service'%}">Service<br><span class="under">事業内容</span</a>
-                    <a class="center" href="{% url 'contact'%}">Contact<br><span class="under">お問い合わせ</span></a>
-                </div>
-            </nav>
-        </div> 
+            <div class="header_left">
+                <a class="header_icon" href="/"><img class="kydolex_header_log" src="{%static 'img/kydolex_white.png'%}" alt=""></a>
+            </div>
+            <div class="header_right">
+                <a class="header_list" href="{% url 'contact'%}">Contact<br><span class="under">お問い合わせ</span></a>
+                <a class="header_list" href="{% url 'service'%}">Service<br><span class="under">事業内容</span</a>
+                <a class="header_list" href="{% url 'about'%}">Kydolex<br><span class="under">Kydolexについて</span></a>
+                <a class="header_list" href="{% url 'designlist'%}">Library<br><span class="under">作品一覧</span></a>
+                <a class="header_list" href="/">Home<br><span class="under">ホーム</span></a>
+            </div>
+    </div> 
+    
+    <div id="menu">
+        <div>
+            <a class="header_icon" href="/"><img class="kydolex_header_log" src="{%static 'img/kydolex_white.png'%}" alt=""></a>
+            <a href="#menu" class="menuopen"><img class="header_icon_menu" src="{%static 'img/header_line_3.png'%}" alt=""></a>
+            <a href="#close" class="menuclose"><img class="header_icon_menu" src="{%static 'img/header_chanel.png'%}" alt=""></a>
+
+            </div>
+        <ul>
+            <li><a class="header_list" href="/">Home<br><span class="under">ホーム</span></a></li>
+            <li><a class="header_list" href="{% url 'designlist'%}">Library<br><span class="under">作品一覧</span></a></li>
+            <li><a class="header_list" href="{% url 'about'%}">Kydolex<br><span class="under">Kydolexについて</span></a></li>
+            <li><a class="header_list" href="{% url 'service'%}">Service<br><span class="under">事業内容</span></a></li>
+            <li><a class="header_list" href="{% url 'contact'%}">Contact<br><span class="under">お問い合わせ</span></a></li>
+        </ul>
+    </div>
 
     <main>
         <div class="about_back_img">

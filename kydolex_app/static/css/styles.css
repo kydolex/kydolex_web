@@ -17,31 +17,46 @@ main {
 }
 
 /*ヘッダー*/
-.back {
+.header{
   background-color: #1f1f1f;
   position: fixed;
   top: 0;
   left: 0;
   z-index: 6;
   width: 100%;
+  height: 70px;
+  padding: 9px 0%;
+}
+.header_left{
+  position: absolute;
+  display: inline-block;
+  left: 20px;
+  width: 150px;
+}
+.header_right{
+  position: absolute;
+  display: inline-block;
+  right: 8px;
+  width: 90%;
 }
 .kydolex_header_log {
   width: 100%;
   height: 50px;
   object-fit: cover;
 }
-.center0 {
+.header_icon {
   width: 15%;
   height: 50px;
 }
-.center {
+.header_list {
   text-align: center;
   font: normal normal normal 20px/31px Hiragino Mincho ProN;
   height: 55px;
-  padding: 0px 8px;
+  padding: 0% 3%;
   color: #ffffff;
+  float: right;
 }
-.center:hover {
+.header_list:hover {
   color: #ffffff;
 }
 .under {
@@ -50,7 +65,7 @@ main {
   position: relative;
   color: #ffffff;
 }
-.header2{
+#menu{
   display: none;
 }
 @media(max-width: 900px) {
@@ -81,7 +96,102 @@ main {
   .header{
     display: none;
   }
-    }
+  /****メニュー全体****/
+  #menu{
+    display:inline-block;
+    /*配置*/
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 100;
+  }
+/****メニュー開閉ボタン****/
+  #menu div {
+    width: 100%;
+    height: 30px;
+    background: rgb(35 35 35);
+    overflow: hidden;
+    position: fixed;
+  }
+  #menu .menuopen{
+    /*デザイン*/
+    display: block;
+    width: 20%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    right: 0;
+    pointer-events: auto;
+}
+  
+  #menu .menuclose{
+    /*配置*/
+    display: none;
+    width: 20%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    right: 0;
+    pointer-events: auto;
+  }
+  /****メニュー一覧****/
+  #menu ul{
+    /*デザイン*/
+    background: rgb(60 60 60 / 95%);
+    width: 80%;
+    /*配置*/
+    position: fixed;
+    list-style: none;
+    top: 30px;/*#menu divの高さ*/
+    right: 0;
+    display: none;
+  }
+  #menu li{
+    /*配置*/
+    pointer-events: auto;
+  }
+  /****メニューオープン時****/
+  #menu:target .menuopen{
+    /*配置*/
+    display: none;
+  }
+  #menu:target .menuclose{
+    /*配置*/
+    display: block;
+  }
+  #menu:target ul{
+    /*配置*/
+    display: block;
+  }
+  .header_list {
+    text-align: center;
+    font: normal normal normal 20px/31px Hiragino Mincho ProN;
+    height: 55px;
+    width: 100%;
+    padding: 0% 3%;
+    color: #ffffff;
+    border-bottom: 1px rgba(255,255,255,1) solid;
+    display: inline-block;
+}
+.kydolex_header_log {
+  width: 20%;
+  position: absolute;
+  height: 30px;
+  left: 10px;
+  object-fit: cover;
+}
+.header_icon_menu{
+  height: 14px;
+  width: 15px;
+}
+
+}
+
+
+
 
 /*Homeタイトルー*/
 .slide {
@@ -377,7 +487,7 @@ main {
   position: absolute;
   font: normal normal bold 18px/100% Hiragino Mincho ProN;
   color: #ffffff;
-  padding: 85px 0px 0px 0px;
+  padding: 75px 0px 0px 0px;
   width: 100%;
   z-index: 3;
 }
@@ -415,7 +525,7 @@ main {
   }
 .site_link_title_sub {
   position: absolute;
-  font: normal normal normal 12px/100% Hiragino Mincho ProN;
+  font: normal normal bold 12px/100% Hiragino Mincho ProN;
   color: #ffffff;
   padding: 40px 0px 0px 0px;
   width: 100%;
@@ -442,14 +552,14 @@ main {
     font: normal normal bold 15px/100% Hiragino Mincho ProN;
     color: #ffffff;
     width: 100%;
-    padding: 20px 0px 0px 0px;
+    padding: 15px 0px 0px 0px;
     z-index: 3;
   }
   .site_link_title_sub_2 {
     position: absolute;
     font: normal normal bold 11px/100% Hiragino Mincho ProN;
     color: #ffffff;
-    padding: 40px 0px 0px 0px;
+    padding: 33px 0px 0px 0px;
     width: 100%;
     z-index: 3;
   }
@@ -592,6 +702,13 @@ main {
     margin: 1% 1%;
     z-index: 1;
   }
+  .sub_page_title {
+    position: relative;
+    display: inline-block;
+    padding-top: 30px;
+    width: 100%;
+    height: 180px;
+}
     }
 /*image*/
 .square_img{
@@ -648,7 +765,7 @@ main {
 }
 .tab{
   flex-grow: 1;
-  padding:5px;
+  padding: 3px 4px 3px 4px;
   list-style:none;
   border:solid 1px #CCC;
   text-align:center;
